@@ -13,29 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.afollestad.librarytemplatesample
+package com.cioccarellia.sample
 
-import android.view.View
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
-internal object Debouncer {
-  @Volatile private var enabled: Boolean = true
-  private val enableAgain = Runnable { enabled = true }
+class MainActivity : AppCompatActivity() {
+    private val inputView by lazy { findViewById<TextView>(R.id.inputView) }
+    private val buttonView by lazy { findViewById<Button>(R.id.buttonView) }
 
-  fun canPerform(view: View): Boolean {
-    if (enabled) {
-      enabled = false
-      view.post(enableAgain)
-      return true
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
     }
-    return false
-  }
-}
-
-internal fun <T : View> T.onClickDebounced(click: (view: T) -> Unit) {
-  setOnClickListener {
-    if (Debouncer.canPerform(it)) {
-      @Suppress("UNCHECKED_CAST")
-      click(it as T)
-    }
-  }
 }

@@ -1,11 +1,29 @@
+/**
+ * Designed and developed by Andrea Cioccarelli (@cioccarellia)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 ext.library = [
-    min_sdk: 19,
-    compile_sdk: 29,
+        min_sdk             : 19,
+        compile_sdk         : 30,
 
-    publish_group: "com.afollestad",
-    publish_version: "0.1.0",
-    publish_version_code: 1,
+        artifact            : "kite",
 
-    description: "(none)",
-    website: "https://github.com/afollestad/library-template-android"
+        publish_group       : "com.cioccarellia",
+        publish_version     : "1.0.0",
+        publish_version_code: 100,
+
+        description         : "(none)",
+        website             : "https://github.com/cioccarellia/kite"
 ]

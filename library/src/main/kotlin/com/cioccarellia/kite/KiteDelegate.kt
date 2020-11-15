@@ -1,5 +1,5 @@
 /**
- * Designed and developed by Aidan Follestad (@afollestad)
+ * Designed and developed by Andrea Cioccarelli (@cioccarellia)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.afollestad.librarytemplate
+package com.cioccarellia.kite
 
 import android.content.Context
-import androidx.annotation.VisibleForTesting
+import kotlin.reflect.KProperty
 
-/** @author Aidan Follestad (@afollestad) */
-class Greeter(
-  @VisibleForTesting var context: Context?
+class KiteDelegate(
+    applicationContext: Context
 ) {
-  /** Greets someone with the given [name]. */
-  fun greet(name: String): String {
-    return context?.resources?.getString(R.string.hello_x, name).orEmpty()
-  }
+    private val kite = Kite(applicationContext)
 
-  /** Releases the [context]. */
-  fun dispose() {
-    context = null
-  }
+    operator fun getValue(thisRef: Any?, property: KProperty<*>) = kite
+
+    operator fun setValue(thisRef: Any?, property: KProperty<*>, value: Kite) {
+
+    }
 }
