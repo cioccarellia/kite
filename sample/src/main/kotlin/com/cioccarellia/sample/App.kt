@@ -23,7 +23,7 @@ class App : Application() {
 
     companion object {
         lateinit var appContext: Context
-        val kite by Kite.fly(appContext)
+        val kite by lazy { Kite.fly(appContext) }
     }
 
     override fun onCreate() {

@@ -15,14 +15,14 @@
  */
 
 ext.library = [
-        min_sdk             : 19,
+        min_sdk             : 14,
         compile_sdk         : 30,
 
         artifact            : "kite",
 
         publish_group       : "com.cioccarellia",
-        publish_version     : "1.0.0-alpha1",
-        publish_version_code: 90,
+        publish_version     : "1.0.0-alpha2",
+        publish_version_code: 91,
 
         description         : "(none)",
         website             : "https://github.com/cioccarellia/kite"
