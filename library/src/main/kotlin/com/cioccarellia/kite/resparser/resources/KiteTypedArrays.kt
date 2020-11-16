@@ -13,21 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.cioccarellia.sample
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-import android.app.Application
-import android.content.Context
-import com.cioccarellia.kite.Kite
+package com.cioccarellia.kite.resparser.resources
 
-class App : Application() {
+import android.content.res.TypedArray
+import androidx.annotation.ArrayRes
+import com.cioccarellia.kite.resparser.KiteResParser
 
-    companion object {
-        lateinit var appContext: Context
-        val kite by Kite.fly(appContext)
-    }
-
-    override fun onCreate() {
-        super.onCreate()
-        appContext = this
-    }
+class KiteTypedArrays : KiteResParser<@ArrayRes Int, TypedArray>() {
+    override operator fun get(
+        @ArrayRes typedArray: Int
+    ): TypedArray = appContext.resources.obtainTypedArray(typedArray)
 }

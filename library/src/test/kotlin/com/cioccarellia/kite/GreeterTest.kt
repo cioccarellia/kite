@@ -15,12 +15,6 @@
  */
 package com.cioccarellia.kite
 
-import android.content.Context
-import android.content.res.Resources
-import com.google.common.truth.Truth.assertThat
-import com.nhaarman.mockitokotlin2.*
-import org.junit.Test
-
 class GreeterTest {
     /*private val resources = mock<Resources> {
         on { getString(eq(R.string.hello_x), isA()) } doAnswer { inv ->

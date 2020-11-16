@@ -13,21 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.cioccarellia.sample
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-import android.app.Application
-import android.content.Context
-import com.cioccarellia.kite.Kite
+package com.cioccarellia.kite.resparser.resources
 
-class App : Application() {
+import androidx.annotation.PluralsRes
+import com.cioccarellia.kite.resparser.KiteParser
 
-    companion object {
-        lateinit var appContext: Context
-        val kite by Kite.fly(appContext)
-    }
+class KitePlurals : KiteParser() {
+    operator fun get(
+        @PluralsRes plurals: Int,
+        quantity: Int
+    ): String = appContext.resources.getQuantityString(plurals, quantity)
 
-    override fun onCreate() {
-        super.onCreate()
-        appContext = this
-    }
+    operator fun get(
+        @PluralsRes plurals: Int,
+        quantity: Int,
+        vararg formatArgs: String
+    ): String = appContext.resources.getQuantityString(plurals, quantity, formatArgs)
 }

@@ -13,21 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.cioccarellia.sample
+package com.cioccarellia.kite.delegate
 
-import android.app.Application
-import android.content.Context
 import com.cioccarellia.kite.Kite
+import kotlin.reflect.KProperty
 
-class App : Application() {
-
-    companion object {
-        lateinit var appContext: Context
-        val kite by Kite.fly(appContext)
-    }
-
-    override fun onCreate() {
-        super.onCreate()
-        appContext = this
-    }
+class KiteDelegate {
+    private val kite = Kite()
+    operator fun getValue(thisRef: Any?, property: KProperty<*>) = kite
 }

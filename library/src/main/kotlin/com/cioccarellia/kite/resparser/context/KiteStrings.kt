@@ -13,19 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.cioccarellia.kite
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-import android.content.Context
-import kotlin.reflect.KProperty
+package com.cioccarellia.kite.resparser.context
 
-class KiteDelegate(
-    applicationContext: Context
-) {
-    private val kite = Kite(applicationContext)
+import androidx.annotation.StringRes
+import com.cioccarellia.kite.resparser.KiteResParser
 
-    operator fun getValue(thisRef: Any?, property: KProperty<*>) = kite
+class KiteStrings : KiteResParser<@StringRes Int, String>() {
+    override operator fun get(
+        @StringRes string: Int
+    ): String = appContext.getString(string)
 
-    operator fun setValue(thisRef: Any?, property: KProperty<*>, value: Kite) {
-
-    }
+    operator fun get(
+        @StringRes string: Int,
+        vararg arguments: String
+    ): String = appContext.getString(string, arguments)
 }

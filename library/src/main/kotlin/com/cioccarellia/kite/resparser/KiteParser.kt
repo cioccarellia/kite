@@ -13,21 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.cioccarellia.sample
+package com.cioccarellia.kite.resparser
 
-import android.app.Application
 import android.content.Context
 import com.cioccarellia.kite.Kite
 
-class App : Application() {
-
-    companion object {
-        lateinit var appContext: Context
-        val kite by Kite.fly(appContext)
-    }
-
-    override fun onCreate() {
-        super.onCreate()
-        appContext = this
-    }
+abstract class KiteParser {
+    val appContext: Context
+        get() = Kite.appContext
 }
