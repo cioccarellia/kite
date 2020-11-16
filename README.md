@@ -12,3 +12,25 @@
   <a><img src="https://img.shields.io/badge/compile-30-00e676.svg" alt="Android Compile Version"></a>
   <a href="https://github.com/cioccarellia/kite/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License"></a>
 </p>
+
+## TLDR
+```gradle
+implementation 'com.cioccarellia:kite:1.0.0-not-yet-ready'
+```
+
+- :heart: Kotlin powered.
+
+```kotlin
+class App : Application() {
+
+    companion object {
+        lateinit var appContext: Context
+        val kite by Kite.fly(appContext)
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        appContext = this
+    }
+}
+```
