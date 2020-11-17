@@ -16,7 +16,7 @@
 ## TLDR
 Fed up with typing ContextCompact, recources and context all over your apps to access your resources? Say no more.
 ```gradle
-implementation 'com.cioccarellia:kite:1.0.0-not-yet-ready'
+implementation 'com.cioccarellia:kite:1.0.0-alpha2'
 ```
 
 - :heart: Kotlin powered.
