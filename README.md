@@ -39,12 +39,12 @@ class App : Application() {
 
 ```kotlin
 // Kite
-fab.rippleColor = kite.color[R.color.md_light_lime]
-fab.backgroundTintList = kite.colorStateList[R.color.md_lime]
-fab.text = kite.string[R.string.ride]
+fab.rippleColor =         kite.color[R.color.md_light_lime]
+fab.backgroundTintList =  kite.colorStateList[R.color.md_lime]
+fab.text =                kite.string[R.string.ride]
 
 // Standard
-fab.rippleColor = ContextCompact.getColor(appContext, R.color.md_light_lime)
-fab.backgroundTintList = ColorStateList.valueOf(R.color.md_lime)
-fab.text = appContext.getString(R.string.ride)
+fab.rippleColor =         ContextCompact.getColor(appContext, R.color.md_light_lime)
+fab.backgroundTintList =  ColorStateList.valueOf(R.color.md_lime)
+fab.text =                appContext.getString(R.string.ride)
 ```
