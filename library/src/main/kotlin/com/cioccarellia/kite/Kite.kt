@@ -149,6 +149,12 @@ class Kite internal constructor() {
     val integer by lazy { KiteIntegers() }
 
     /**
+     * Fetches fractions [Float]s from resources, given the value base and the parent value base.
+     * [Resources.getFraction()] is used to resolve the id.
+     * */
+    val fraction by lazy { KiteFraction() }
+
+    /**
      * Fetches Layout [XmlResourceParser]s from resources.
      * [Resources.getLayout()] is used to resolve the id.
      * */

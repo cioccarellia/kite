@@ -17,14 +17,16 @@
 
 package com.cioccarellia.kite.resparser.resources
 
-import androidx.annotation.ArrayRes
-import com.cioccarellia.kite.resparser.KiteResParser
+import androidx.annotation.FractionRes
+import com.cioccarellia.kite.resparser.KiteParser
 
 /**
- * KiteStringArrays Implementation
+ * KiteFraction Implementation
  * */
-class KiteStringArrays : KiteResParser<@ArrayRes Int, Array<out String>>() {
-    override operator fun get(
-        @ArrayRes stringArray: Int
-    ): Array<out String> = appContext.resources.getStringArray(stringArray)
+class KiteFraction : KiteParser() {
+    operator fun get(
+        @FractionRes fraction: Int,
+        base: Int,
+        pbase: Int
+    ): Float = appContext.resources.getFraction(fraction, base, pbase)
 }
