@@ -53,26 +53,28 @@ fab.text =                appContext.getString(R.string.ride)
 ```
 
 ## Supported Resources
-| Resource Type   	| AAPT class 	| Namespace             	| Input                           	| Output              	| Variants 	|
-|-----------------	|------------	|-----------------------	|---------------------------------	|---------------------	|----------	|
-| Strings         	| R.string   	| `Kite.string`         	| `@StringRes string: Int`        	| `String`            	|          	|
-| Plurals         	| R.plurals  	| `Kite.plural`         	| `@PluralRes plural: Int`        	| `String`            	|          	|
-| Texts           	| R.string   	| `Kite.text`           	| `@StringRes text: Int`          	| `CharSequence`      	|          	|
-| Color           	| R.color    	| `Kite.color`          	| `@ColorRes color: Int`          	| `@ColorInt Color`   	|          	|
-| ColorStateLists 	| R.color    	| `Kite.colorStateList` 	| `@ColorRes colorStateList: Int` 	| `ColorStateList`    	|          	|
-| Drawables       	| R.drawable 	| `Kite.drawable`       	| `@DrawableRes drawable: Int`    	| `Drawable`          	|          	|
-| Dimensions      	| R.dimen    	| `Kite.dimension`      	|                                 	|                     	|          	|
-| Animations      	| R.anim     	| `Kite.animation`      	|                                 	|                     	|          	|
-| Interpolators   	| R.anim     	| `Kite.interpolation`  	|                                 	|                     	|          	|
-| Layouts         	| R.layout   	| `Kite.layout`         	| `@AnimRes animation: Int`       	|                     	|          	|
-| Booleans        	| R.bool     	| `Kite.booleans`       	| `@BoolRes bolean: Int`          	| `Boolean`           	|          	|
-| IntArray        	|            	| `Kite.intArray`       	|                                 	| `IntArray`          	|          	|
-| StringArray     	|            	| `Kite.stringArray`    	|                                 	| `Array<out String>` 	|          	|
-| TypedArrays     	|            	| `Kite.typedArray`     	|                                 	| `TypedArray`        	|          	|
-| Identifiers     	| R.id       	| `Kite.identifier`     	|                                 	|                     	|          	|
-| Xmls            	| R.xml      	| `Kite.xml`            	|                                 	|                     	|          	|
-| Raws            	|            	| `Kite.raw`            	|                                 	| `InputStream`       	|          	|
-| Fonts           	| R.font     	| `Kite.font`           	|                                 	| `Typeface`          	|          	|
+| Resource Type   	| AAPT class 	| Namespace             	| Input                                                   	| Output              	| Implementation                      	| API 	| Variants           	|
+|-----------------	|------------	|-----------------------	|---------------------------------------------------------	|---------------------	|-------------------------------------	|-----	|--------------------	|
+| Strings         	| R.string   	| `Kite.string`         	| `@StringRes string: Int`                                	| `String`            	| `Context.getString()`               	| /   	| `formatArgs`       	|
+| Plurals         	| R.plurals  	| `Kite.plural`         	| `@PluralRes plural: Int`, `quantity: Int`               	| `String`            	| `Resources.getQuantityString()`     	| /   	| `formatArgs`       	|
+| Texts           	| R.string   	| `Kite.text`           	| `@StringRes text: Int`                                  	| `CharSequence`      	| `Context.getText()`                 	| /   	| /                  	|
+| Color           	| R.color    	| `Kite.color`          	| `@ColorRes color: Int`                                  	| `@ColorInt Color`   	| `ContextCompat.getColor()`          	| /   	| /                  	|
+| ColorStateLists 	| R.color    	| `Kite.colorStateList` 	| `@ColorRes colorStateList: Int`                         	| `ColorStateList`    	| `ContextCompat.getColorStateList()` 	| /   	| /                  	|
+| Drawables       	| R.drawable 	| `Kite.drawable`       	| `@DrawableRes drawable: Int`                            	| `Drawable`          	| `ContextCompat.getDrawable()`       	| /   	| `Resources.Theme?` 	|
+| Dimensions      	| R.dimen    	| `Kite.dimension`      	| `@DimenRes dimensions: Int`                             	| `Float`             	| `Resources.getDimensions()`         	| /   	| /                  	|
+| Animations      	| R.anim     	| `Kite.animation`      	| `@AnimRes animation: Int`                               	| `Animation`         	| `AnimationUtils.loadAnimation()`    	| /   	| /                  	|
+| Interpolators   	| R.anim     	| `Kite.interpolation`  	| `@InterpolatorRes interpolator: Int`                    	| `Interpolator`      	| `AnimationUtils.loadInterpolator()` 	| /   	| /                  	|
+| Layouts         	| R.layout   	| `Kite.layout`         	| `@LayoutRes layout: Int`                                	| `XmlResourceParser` 	| `Resources.getlayout()`             	| /   	| /                  	|
+| Booleans        	| R.bool     	| `Kite.booleans`       	| `@BoolRes bolean: Int`                                  	| `Boolean`           	| `Resources.getBoolean()`            	| /   	| /                  	|
+| IntArray        	| R.array    	| `Kite.intArray`       	| `@ArrayRes intArray: Int`                               	| `IntArray`          	| `Resources.getIntArray()`           	| /   	| /                  	|
+| StringArray     	| R.array    	| `Kite.stringArray`    	| `@ArrayRes stringArray: Int`                            	| `Array<out String>` 	| `Resources.getStringArray()`        	| /   	| /                  	|
+| TypedArrays     	| R.array    	| `Kite.typedArray`     	| `@ArrayRes typedArray: Int`                             	| `TypedArray`        	| `Resources.obtainTypedArray()`      	| /   	| /                  	|
+| Identifiers     	| R.id       	| `Kite.identifier`     	| `name: String`, `defType: String`, `defPackage: String` 	| `Int`               	| `Resources.getIdentifier()`         	| /   	| /                  	|
+| Xmls            	| R.xml      	| `Kite.xml`            	| `@XmlRes xml: Int`                                      	| `XmlResourceParser` 	| `Resources.getXml()`                	| /   	| /                  	|
+| Raws            	| R.raw      	| `Kite.raw`            	| `@RawRes raw: Int`                                      	| `InputStream`       	| `Resources.openRawResource()`       	| /   	| `TypedValue`       	|
+| Fonts           	| R.font     	| `Kite.font`           	| `@FontRes font: Int`                                    	| `Typeface`          	| `Resources.getFont()`               	| 26  	| /                  	|
+| Integer         	| R.integer  	| `Kite.integer`        	| `@IntegerRes integer: Int`                              	| `Int`               	| `Resources.getInteger()`            	| /   	| /                  	|
+| Fraction        	| R.fraction 	| `Kite.fraction`       	| `@FractionRes fraction: Int`, `base: Int`, `pbase: Int` 	| `Float`             	| `Resources.getFraction()`           	| /   	| /                  	|
 
 ## Known Issues
 - Annotation checks over resource parameters (functions which take as argument some annotated value, like `@ColorRes`, `@StringRes`) are not extensively performed by Android Studio, when using kotlin operator functions: I created a bug report to google issuetracker [here](https://issuetracker.google.com/issues/173628041).
