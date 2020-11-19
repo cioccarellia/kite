@@ -21,7 +21,7 @@ implementation 'com.cioccarellia:kite:1.0.0-beta1'
 
 - :kite: Access app resources with one contextless unified syntax
 - :dna: Null safe layer between Android framework and your app
-- :heart: Kotlin powered.
+- :heart: Kotlin powered, 100%.
 
 ```kotlin
 class App : Application() {
@@ -51,21 +51,23 @@ fab.text =                appContext.getString(R.string.ride)
 ```
 
 ## Supported Resources
-- Strings
-- Plurals
-- Texts
-- Color
-- ColorStateLists
-- Drawables
-- Dimensions
-- Animations
-- Interpolators
-- Layouts
-- Booleans
-- IntArray
-- StringArray
-- TypedArrays
-- Identifiers
-- Xmls
-- Raws
-- Fonts
+| Resource Type   	| AAPT class 	| Namespace             	| Input                           	| Output              	| Variants 	|
+|-----------------	|------------	|-----------------------	|---------------------------------	|---------------------	|----------	|
+| Strings         	| R.string   	| `Kite.string`         	| `@StringRes string: Int`        	| `String`            	|          	|
+| Plurals         	| R.plurals  	| `Kite.plural`         	| `@PluralRes plural: Int`        	| `String`            	|          	|
+| Texts           	| R.string   	| `Kite.text`           	| `@StringRes text: Int`          	| `CharSequence`      	|          	|
+| Color           	| R.color    	| `Kite.color`          	| `@ColorRes color: Int`          	| `@ColorInt Color`   	|          	|
+| ColorStateLists 	| R.color    	| `Kite.colorStateList` 	| `@ColorRes colorStateList: Int` 	| `ColorStateList`    	|          	|
+| Drawables       	| R.drawable 	| `Kite.drawable`       	| `@DrawableRes drawable: Int`    	| `Drawable`          	|          	|
+| Dimensions      	| R.dimen    	| `Kite.dimension`      	|                                 	|                     	|          	|
+| Animations      	| R.anim     	| `Kite.animation`      	|                                 	|                     	|          	|
+| Interpolators   	| R.anim     	| `Kite.interpolation`  	|                                 	|                     	|          	|
+| Layouts         	| R.layout   	| `Kite.layout`         	| `@AnimRes animation: Int`       	|                     	|          	|
+| Booleans        	| R.bool     	| `Kite.booleans`       	| `@BoolRes bolean: Int`          	| `Boolean`           	|          	|
+| IntArray        	|            	| `Kite.intArray`       	|                                 	| `IntArray`          	|          	|
+| StringArray     	|            	| `Kite.stringArray`    	|                                 	| `Array<out String>` 	|          	|
+| TypedArrays     	|            	| `Kite.typedArray`     	|                                 	| `TypedArray`        	|          	|
+| Identifiers     	| R.id       	| `Kite.identifier`     	|                                 	|                     	|          	|
+| Xmls            	| R.xml      	| `Kite.xml`            	|                                 	|                     	|          	|
+| Raws            	|            	| `Kite.raw`            	|                                 	| `InputStream`       	|          	|
+| Fonts           	| R.font     	| `Kite.font`           	|                                 	| `Typeface`          	|          	|
