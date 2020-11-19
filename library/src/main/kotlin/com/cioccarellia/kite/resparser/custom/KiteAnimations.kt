@@ -22,6 +22,9 @@ import android.view.animation.AnimationUtils
 import androidx.annotation.AnimRes
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteAnimations Implementation
+ * */
 class KiteAnimations : KiteResParser<@AnimRes Int, Animation>() {
     override operator fun get(
         @AnimRes animation: Int

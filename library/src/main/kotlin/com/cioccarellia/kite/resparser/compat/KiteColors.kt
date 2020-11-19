@@ -22,6 +22,9 @@ import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteColors Implementation
+ * */
 class KiteColors : KiteResParser<@ColorRes Int, @ColorInt Int>() {
     @ColorInt
     override operator fun get(

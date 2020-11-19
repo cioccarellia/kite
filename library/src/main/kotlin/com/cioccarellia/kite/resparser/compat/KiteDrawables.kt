@@ -25,6 +25,9 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteDrawables Implementation
+ * */
 class KiteDrawables : KiteResParser<@DrawableRes Int, Drawable>() {
     override operator fun get(
         @DrawableRes drawable: Int

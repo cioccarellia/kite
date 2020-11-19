@@ -15,6 +15,9 @@
  */
 package com.cioccarellia.kite.resparser
 
+/**
+ * [KiteParser] which has precisely 1 input and 1 output
+ * */
 abstract class KiteResParser<in R, out O> : KiteParser() {
     abstract operator fun get(resource: R): O
 }

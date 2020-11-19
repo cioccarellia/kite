@@ -21,6 +21,9 @@ import android.content.res.XmlResourceParser
 import androidx.annotation.XmlRes
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteXmls Implementation
+ * */
 class KiteXmls : KiteResParser<@XmlRes Int, XmlResourceParser>() {
     override operator fun get(
         @XmlRes xml: Int

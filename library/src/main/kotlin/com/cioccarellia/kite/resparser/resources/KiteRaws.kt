@@ -22,6 +22,9 @@ import androidx.annotation.RawRes
 import com.cioccarellia.kite.resparser.KiteResParser
 import java.io.InputStream
 
+/**
+ * KiteRaws Implementation
+ * */
 class KiteRaws : KiteResParser<@RawRes Int, InputStream>() {
     override operator fun get(
         @RawRes raw: Int

@@ -20,6 +20,9 @@ package com.cioccarellia.kite.resparser.context
 import androidx.annotation.StringRes
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteTexts Implementation
+ * */
 class KiteTexts : KiteResParser<@StringRes Int, CharSequence>() {
     override operator fun get(
         @StringRes text: Int

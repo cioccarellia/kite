@@ -22,6 +22,9 @@ import android.view.animation.Interpolator
 import androidx.annotation.InterpolatorRes
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteInterpolators Implementation
+ * */
 class KiteInterpolators : KiteResParser<@InterpolatorRes Int, Interpolator>() {
     override operator fun get(
         @InterpolatorRes animation: Int

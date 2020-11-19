@@ -20,6 +20,9 @@ package com.cioccarellia.kite.resparser.resources
 import androidx.annotation.BoolRes
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteBools Implementation
+ * */
 class KiteBools : KiteResParser<@BoolRes Int, Boolean>() {
     override operator fun get(
         @BoolRes boolean: Int

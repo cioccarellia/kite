@@ -20,6 +20,9 @@ package com.cioccarellia.kite.resparser.resources
 import androidx.annotation.DimenRes
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteDimens Implementation
+ * */
 class KiteDimensions : KiteResParser<@DimenRes Int, Float>() {
     override operator fun get(
         @DimenRes dimension: Int

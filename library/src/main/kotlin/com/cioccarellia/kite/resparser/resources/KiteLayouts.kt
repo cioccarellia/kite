@@ -21,6 +21,9 @@ import android.content.res.XmlResourceParser
 import androidx.annotation.LayoutRes
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteLayouts Implementation
+ * */
 class KiteLayouts : KiteResParser<@LayoutRes Int, XmlResourceParser>() {
     override operator fun get(
         @LayoutRes layout: Int

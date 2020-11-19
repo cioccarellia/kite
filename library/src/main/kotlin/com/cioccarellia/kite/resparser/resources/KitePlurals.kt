@@ -20,6 +20,9 @@ package com.cioccarellia.kite.resparser.resources
 import androidx.annotation.PluralsRes
 import com.cioccarellia.kite.resparser.KiteParser
 
+/**
+ * KitePlurals Implementation
+ * */
 class KitePlurals : KiteParser() {
     operator fun get(
         @PluralsRes plurals: Int,

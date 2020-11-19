@@ -23,6 +23,9 @@ import androidx.annotation.FontRes
 import androidx.annotation.RequiresApi
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteFonts Implementation
+ * */
 class KiteFonts : KiteResParser<@FontRes Int, Typeface>() {
     @RequiresApi(Build.VERSION_CODES.O)
     override operator fun get(

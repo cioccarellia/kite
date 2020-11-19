@@ -21,6 +21,9 @@ import android.content.res.TypedArray
 import androidx.annotation.ArrayRes
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteTypedArrays Implementation
+ * */
 class KiteTypedArrays : KiteResParser<@ArrayRes Int, TypedArray>() {
     override operator fun get(
         @ArrayRes typedArray: Int

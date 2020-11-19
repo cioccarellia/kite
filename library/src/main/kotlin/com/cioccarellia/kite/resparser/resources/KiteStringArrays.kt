@@ -20,6 +20,9 @@ package com.cioccarellia.kite.resparser.resources
 import androidx.annotation.ArrayRes
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteStringArrays Implementation
+ * */
 class KiteStringArrays : KiteResParser<@ArrayRes Int, Array<out String>>() {
     override operator fun get(
         @ArrayRes intArray: Int

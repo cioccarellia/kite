@@ -19,6 +19,9 @@ package com.cioccarellia.kite.resparser.resources
 
 import com.cioccarellia.kite.resparser.KiteParser
 
+/**
+ * KiteIdentifier Implementation
+ * */
 class KiteIdentifier : KiteParser() {
     operator fun get(
         name: String,

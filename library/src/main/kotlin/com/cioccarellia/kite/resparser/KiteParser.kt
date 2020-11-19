@@ -18,7 +18,10 @@ package com.cioccarellia.kite.resparser
 import android.content.Context
 import com.cioccarellia.kite.Kite
 
+/**
+ * Represents a Kite parser entity
+ * */
 abstract class KiteParser {
-    val appContext: Context
+    internal val appContext: Context
         get() = Kite.appContext
 }

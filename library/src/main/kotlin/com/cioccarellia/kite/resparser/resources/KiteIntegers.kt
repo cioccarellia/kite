@@ -21,6 +21,9 @@ import androidx.annotation.BoolRes
 import androidx.annotation.IntegerRes
 import com.cioccarellia.kite.resparser.KiteResParser
 
+/**
+ * KiteIntegers Implementation
+ * */
 class KiteIntegers : KiteResParser<@BoolRes Int, Int>() {
     override operator fun get(
         @IntegerRes integer: Int
