@@ -18,9 +18,6 @@
 package com.cioccarellia.kite.resparser.resources
 
 import android.content.res.XmlResourceParser
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import androidx.annotation.AnimRes
 import androidx.annotation.LayoutRes
 import com.cioccarellia.kite.resparser.KiteResParser
 

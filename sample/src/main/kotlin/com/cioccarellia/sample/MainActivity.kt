@@ -19,7 +19,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.cioccarellia.sample.App.Companion.kite
 
 class MainActivity : AppCompatActivity() {
     private val inputView by lazy { findViewById<TextView>(R.id.inputView) }
@@ -28,6 +27,5 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
     }
 }

@@ -17,11 +17,7 @@
 
 package com.cioccarellia.kite.resparser.resources
 
-import androidx.annotation.ArrayRes
 import com.cioccarellia.kite.resparser.KiteParser
-import com.cioccarellia.kite.resparser.KiteResParser
-import org.intellij.lang.annotations.Identifier
-import java.lang.reflect.Array
 
 class KiteIdentifier : KiteParser() {
     operator fun get(

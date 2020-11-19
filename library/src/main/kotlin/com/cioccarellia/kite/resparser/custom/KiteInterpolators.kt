@@ -17,10 +17,8 @@
 
 package com.cioccarellia.kite.resparser.custom
 
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.Interpolator
-import androidx.annotation.AnimRes
 import androidx.annotation.InterpolatorRes
 import com.cioccarellia.kite.resparser.KiteResParser
 

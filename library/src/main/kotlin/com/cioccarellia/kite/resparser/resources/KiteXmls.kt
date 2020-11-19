@@ -18,10 +18,8 @@
 package com.cioccarellia.kite.resparser.resources
 
 import android.content.res.XmlResourceParser
-import androidx.annotation.BoolRes
 import androidx.annotation.XmlRes
 import com.cioccarellia.kite.resparser.KiteResParser
-import org.xmlpull.v1.XmlPullParser
 
 class KiteXmls : KiteResParser<@XmlRes Int, XmlResourceParser>() {
     override operator fun get(

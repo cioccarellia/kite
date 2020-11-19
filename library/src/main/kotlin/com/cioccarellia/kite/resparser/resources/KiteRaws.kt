@@ -17,11 +17,8 @@
 
 package com.cioccarellia.kite.resparser.resources
 
-import android.content.res.TypedArray
-import android.content.res.XmlResourceParser
 import android.util.TypedValue
 import androidx.annotation.RawRes
-import androidx.annotation.XmlRes
 import com.cioccarellia.kite.resparser.KiteResParser
 import java.io.InputStream
 

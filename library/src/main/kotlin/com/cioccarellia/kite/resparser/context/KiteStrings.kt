@@ -27,6 +27,6 @@ class KiteStrings : KiteResParser<@StringRes Int, String>() {
 
     operator fun get(
         @StringRes string: Int,
-        vararg arguments: String
-    ): String = appContext.getString(string, arguments)
+        vararg formatArguments: String
+    ): String = appContext.getString(string, formatArguments)
 }

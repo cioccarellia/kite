@@ -15,9 +15,6 @@
  */
 package com.cioccarellia.kite.resparser
 
-import android.content.Context
-import com.cioccarellia.kite.Kite
-
 abstract class KiteResParser<in R, out O> : KiteParser() {
     abstract operator fun get(resource: R): O
 }
