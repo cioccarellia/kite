@@ -19,10 +19,14 @@ Fed up with typing `ContextCompact`, `resources` and `context` all over your app
 implementation 'com.cioccarellia:kite:1.0.0-beta2'
 ```
 
-- :kite: Access all app resources with one unified syntax
-- :dna: Null safe layer between the Android framework java code and your app
-- :zap: Easy to implement in existing apps
+- :kite: Access all app resources with one unified syntax.
+- :dna: Null safe layer between the Android framework java code and your app.
+- :ice_cube: Transparent and lightweight wrapper.
+- :zap: Easy to implement in existing apps.
 - :heart: Kotlin powered, 100%.
+
+## Usage
+Initialize the kite global object (ideally inside your `Application` class) and pass to it the application context.
 
 ```kotlin
 class App : Application() {
@@ -39,7 +43,7 @@ class App : Application() {
 }
 ```
 
-## Sample Usage
+You're all set. Simply import the `kite` object, select what you want to use and access it with the bracket notation `[]`.
 
 ```kotlin
 // Kite
