@@ -14,7 +14,7 @@
 </p>
 
 ## TLDR
-Fed up with typing ContextCompact, recources and context all over your apps to access your resources? Say no more.
+Fed up with typing `ContextCompact`, .`recources` and `context` all over your apps to access your resources? Say no more.
 ```gradle
 implementation 'com.cioccarellia:kite:1.0.0-beta1'
 ```
@@ -75,4 +75,4 @@ fab.text =                appContext.getString(R.string.ride)
 | Fonts           	| R.font     	| `Kite.font`           	|                                 	| `Typeface`          	|          	|
 
 ## Known Issues
-- Annotation checks over resource parameters (functions which take as argument some annotated value, like @ColorRes, @stringRes) are not extensively performed by Android Studio, when using kotlin operator functions: I created a bug report to google issuetracker [here](https://issuetracker.google.com/issues/173628041).
+- Annotation checks over resource parameters (functions which take as argument some annotated value, like `@ColorRes`, `@StringRes`) are not extensively performed by Android Studio, when using kotlin operator functions: I created a bug report to google issuetracker [here](https://issuetracker.google.com/issues/173628041).
