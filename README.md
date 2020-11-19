@@ -38,6 +38,8 @@ class App : Application() {
 }
 ```
 
+## Sample Usage
+
 ```kotlin
 // Kite
 fab.rippleColor =         kite.color[R.color.md_light_lime]
