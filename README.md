@@ -71,3 +71,6 @@ fab.text =                appContext.getString(R.string.ride)
 | Xmls            	| R.xml      	| `Kite.xml`            	|                                 	|                     	|          	|
 | Raws            	|            	| `Kite.raw`            	|                                 	| `InputStream`       	|          	|
 | Fonts           	| R.font     	| `Kite.font`           	|                                 	| `Typeface`          	|          	|
+
+## Known Issues
+- Annotation checks over resource parameters (functions which take as argument some annotated value, like @ColorRes, @stringRes) are not extensively performed by Android Studio, when using kotlin operator functions: I created a bug report to google issuetracker [here](https://issuetracker.google.com/issues/173628041).
