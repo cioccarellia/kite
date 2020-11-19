@@ -16,10 +16,11 @@
 ## TLDR
 Fed up with typing ContextCompact, recources and context all over your apps to access your resources? Say no more.
 ```gradle
-implementation 'com.cioccarellia:kite:1.0.0-alpha2'
+implementation 'com.cioccarellia:kite:1.0.0-beta1'
 ```
 
 - :kite: Access app resources with one contextless unified syntax
+- :dna: Null safe layer between Android framework and your app
 - :heart: Kotlin powered.
 
 ```kotlin
@@ -48,3 +49,23 @@ fab.rippleColor =         ContextCompact.getColor(appContext, R.color.md_light_l
 fab.backgroundTintList =  ColorStateList.valueOf(R.color.md_lime)
 fab.text =                appContext.getString(R.string.ride)
 ```
+
+## Supported Resources
+- Strings
+- Plurals
+- Texts
+- Color
+- ColorStateLists
+- Drawables
+- Dimensions
+- Animations
+- Interpolators
+- Layouts
+- Booleans
+- IntArray
+- StringArray
+- TypedArrays
+- Identifiers
+- Xmls
+- Raws
+- Fonts
