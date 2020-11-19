@@ -14,7 +14,7 @@
 </p>
 
 ## TLDR
-Fed up with typing `ContextCompact`, .`recources` and `context` all over your apps to access your resources? Say no more.
+Fed up with typing `ContextCompact`, `recources` and `context` all over your apps to access your resources? Say no more.
 ```gradle
 implementation 'com.cioccarellia:kite:1.0.0-beta1'
 ```
