@@ -1,5 +1,3 @@
-apply plugin: "kotlin-android"
-
 /**
  * Designed and developed by Andrea Cioccarelli (@cioccarellia)
  *
@@ -15,6 +13,8 @@ apply plugin: "kotlin-android"
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+apply plugin: "kotlin-android"
+
 apply from: rootProject.file("dependencies.gradle")
 apply from: rootProject.file("library_info.gradle")
 

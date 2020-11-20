@@ -13,15 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-ext.module_name = "sample"
+package com.cioccarellia.kite.resparser.resources
 
-apply from: rootProject.file("gradle/android_application_config.gradle")
+import androidx.annotation.IntRange
+import androidx.annotation.IntegerRes
+import com.cioccarellia.kite.resparser.KiteResParser
 
-dependencies {
-    implementation project(':kite')
-
-    implementation deps.androidx.app_compat
-    implementation deps.androidx.constraint_layout
-    implementation deps.kotlin.stdlib8
+/**
+ * KiteIntegers Implementation
+ * */
+class KiteIntegers : KiteResParser<@IntegerRes Int, Int>() {
+    override operator fun get(
+        @IntegerRes @IntRange(from = 1) integer: Int
+    ): Int = appContext.resources.getInteger(integer)
 }

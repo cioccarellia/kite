@@ -13,15 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-ext.module_name = "sample"
+package com.cioccarellia.kite.resparser.compat
 
-apply from: rootProject.file("gradle/android_application_config.gradle")
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.IntRange
+import androidx.core.content.ContextCompat
+import com.cioccarellia.kite.resparser.KiteResParser
 
-dependencies {
-    implementation project(':kite')
-
-    implementation deps.androidx.app_compat
-    implementation deps.androidx.constraint_layout
-    implementation deps.kotlin.stdlib8
+/**
+ * KiteColors Implementation
+ * */
+class KiteColors : KiteResParser<@ColorRes Int, @ColorInt Int>() {
+    @ColorInt
+    override operator fun get(
+        @ColorRes @IntRange(from = 1) color: Int
+    ): Int = ContextCompat.getColor(appContext, color)
 }

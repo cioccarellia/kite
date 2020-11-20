@@ -13,15 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-ext.module_name = "sample"
+package com.cioccarellia.kite.resparser.resources
 
-apply from: rootProject.file("gradle/android_application_config.gradle")
+import android.content.res.XmlResourceParser
+import androidx.annotation.IntRange
+import androidx.annotation.LayoutRes
+import com.cioccarellia.kite.resparser.KiteResParser
 
-dependencies {
-    implementation project(':kite')
-
-    implementation deps.androidx.app_compat
-    implementation deps.androidx.constraint_layout
-    implementation deps.kotlin.stdlib8
+/**
+ * KiteLayouts Implementation
+ * */
+class KiteLayouts : KiteResParser<@LayoutRes Int, XmlResourceParser>() {
+    override operator fun get(
+        @LayoutRes @IntRange(from = 1) layout: Int
+    ): XmlResourceParser = appContext.resources.getLayout(layout)
 }

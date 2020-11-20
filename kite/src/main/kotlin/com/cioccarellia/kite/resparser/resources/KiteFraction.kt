@@ -13,15 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-ext.module_name = "sample"
+package com.cioccarellia.kite.resparser.resources
 
-apply from: rootProject.file("gradle/android_application_config.gradle")
+import androidx.annotation.FractionRes
+import androidx.annotation.IntRange
+import com.cioccarellia.kite.resparser.KiteParser
 
-dependencies {
-    implementation project(':kite')
-
-    implementation deps.androidx.app_compat
-    implementation deps.androidx.constraint_layout
-    implementation deps.kotlin.stdlib8
+/**
+ * KiteFraction Implementation
+ * */
+class KiteFraction : KiteParser() {
+    operator fun get(
+        @FractionRes @IntRange(from = 1) fraction: Int,
+        @IntRange(from = 2) base: Int,
+        @IntRange(from = 2) pbase: Int
+    ): Float = appContext.resources.getFraction(fraction, base, pbase)
 }

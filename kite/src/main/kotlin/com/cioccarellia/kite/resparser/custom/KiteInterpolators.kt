@@ -13,15 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-ext.module_name = "sample"
+package com.cioccarellia.kite.resparser.custom
 
-apply from: rootProject.file("gradle/android_application_config.gradle")
+import android.view.animation.AnimationUtils
+import android.view.animation.Interpolator
+import androidx.annotation.IntRange
+import androidx.annotation.InterpolatorRes
+import com.cioccarellia.kite.resparser.KiteResParser
 
-dependencies {
-    implementation project(':kite')
-
-    implementation deps.androidx.app_compat
-    implementation deps.androidx.constraint_layout
-    implementation deps.kotlin.stdlib8
+/**
+ * KiteInterpolators Implementation
+ * */
+class KiteInterpolators : KiteResParser<@InterpolatorRes Int, Interpolator>() {
+    override operator fun get(
+        @InterpolatorRes @IntRange(from = 1) animation: Int
+    ): Interpolator = AnimationUtils.loadInterpolator(appContext, animation)!!
 }

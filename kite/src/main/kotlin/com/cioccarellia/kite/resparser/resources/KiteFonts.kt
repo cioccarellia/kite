@@ -13,15 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-ext.module_name = "sample"
+package com.cioccarellia.kite.resparser.resources
 
-apply from: rootProject.file("gradle/android_application_config.gradle")
+import android.graphics.Typeface
+import android.os.Build
+import androidx.annotation.FontRes
+import androidx.annotation.IntRange
+import androidx.annotation.RequiresApi
+import com.cioccarellia.kite.resparser.KiteResParser
 
-dependencies {
-    implementation project(':kite')
-
-    implementation deps.androidx.app_compat
-    implementation deps.androidx.constraint_layout
-    implementation deps.kotlin.stdlib8
+/**
+ * KiteFonts Implementation
+ * */
+class KiteFonts : KiteResParser<@FontRes Int, Typeface>() {
+    @RequiresApi(Build.VERSION_CODES.O)
+    override operator fun get(
+        @FontRes @IntRange(from = 1) font: Int
+    ): Typeface = appContext.resources.getFont(font)
 }

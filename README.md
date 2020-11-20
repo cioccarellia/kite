@@ -22,6 +22,7 @@ implementation 'com.cioccarellia:kite:1.0.0-beta2'
 - :kite: Access all app resources with one unified syntax.
 - :dna: Null safe layer between the Android framework java code and your app.
 - :ice_cube: Transparent and lightweight wrapper.
+- :lock: Extensive built-in checks.
 - :zap: Easy to implement in existing apps.
 - :heart: Kotlin powered, 100%.
 
@@ -66,9 +67,9 @@ fab.text =                appContext.getString(R.string.ride)
 | Color           	| `R.color`        	| `Kite.color`          	| `@ColorRes color: Int`                                  	| `@ColorInt Color`   	| `ContextCompat.getColor()`          	| /   	| /                  	|
 | ColorStateLists 	| `R.color`        	| `Kite.colorStateList` 	| `@ColorRes colorStateList: Int`                         	| `ColorStateList`    	| `ContextCompat.getColorStateList()` 	| /   	| /                  	|
 | Drawables       	| `R.drawable`     	| `Kite.drawable`       	| `@DrawableRes drawable: Int`                            	| `Drawable`          	| `ContextCompat.getDrawable()`       	| /   	| `Resources.Theme?` 	|
-| Layouts         	| `R.layout`       	| `Kite.layout`         	| `@LayoutRes layout: Int`                                	| `XmlResourceParser` 	| `Resources.getlayout()`             	| /   	| /                  	|
+| Layouts         	| `R.layout`       	| `Kite.layout`         	| `@LayoutRes layout: Int`                                	| `XmlResourceParser` 	| `Resources.getLayout()`             	| /   	| /                  	|
 | Integer         	| `R.integer`      	| `Kite.integer`        	| `@IntegerRes integer: Int`                              	| `Int`               	| `Resources.getInteger()`            	| /   	| /                  	|
-| Booleans        	| `R.bool`         	| `Kite.booleans`       	| `@BoolRes bolean: Int`                                  	| `Boolean`           	| `Resources.getBoolean()`            	| /   	| /                  	|
+| Booleans        	| `R.bool`         	| `Kite.booleans`       	| `@BoolRes boolean: Int`                                  	| `Boolean`           	| `Resources.getBoolean()`            	| /   	| /                  	|
 | Dimensions      	| `R.dimen`        	| `Kite.dimension`      	| `@DimenRes dimensions: Int`                             	| `Float`             	| `Resources.getDimensions()`         	| /   	| /                  	|
 | Fractions       	| `R.fraction`     	| `Kite.fraction`       	| `@FractionRes fraction: Int`, `base: Int`, `pbase: Int` 	| `Float`             	| `Resources.getFraction()`           	| /   	| /                  	|
 | Fonts           	| `R.font`         	| `Kite.font`           	| `@FontRes font: Int`                                    	| `Typeface`          	| `Resources.getFont()`               	| 26  	| /                  	|

@@ -13,12 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-apply plugin: "com.android.application"
-apply from: rootProject.file("gradle/android_common_config.gradle")
+package com.cioccarellia.kite.resparser.context
 
-if (module_package_id == null) {
-    throw new IllegalStateException("module_package_id is missing!")
+import androidx.annotation.IntRange
+import androidx.annotation.StringRes
+import com.cioccarellia.kite.resparser.KiteResParser
+
+/**
+ * KiteStrings Implementation
+ * */
+class KiteStrings : KiteResParser<@StringRes Int, String>() {
+    override operator fun get(
+        @StringRes @IntRange(from = 1) string: Int
+    ): String = appContext.getString(string)
+
+    operator fun get(
+        @StringRes @IntRange(from = 1) string: Int,
+        vararg formatArguments: String
+    ): String = appContext.getString(string, formatArguments)
 }
-
-android.defaultConfig.applicationId = module_package_id.replace('-', '')
