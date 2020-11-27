@@ -28,10 +28,11 @@ implementation 'com.cioccarellia:kite:1.0.1'
 - :heart: Kotlin powered, 100%.
 
 ## Usage
-Initialize the kite global object (ideally inside your `Application` class) and pass to it the application context.
+Initialize kite (ideally inside your `Application` class) and pass to it the application context.
 
 ```kotlin
 class App : Application() {
+
     override fun onCreate() {
         super.onCreate()
         Kite.fly(this)
@@ -39,13 +40,13 @@ class App : Application() {
 }
 ```
 
-You're all set. Simply import the `kite` object, select what you want to use and access it with the bracket notation `[]`.
+You're all set. Import the `Kite` object, select what you want to use and access it with the bracket notation `[]`.
 
 ```kotlin
 // Kite
-fab.rippleColor =         kite.color[R.color.md_light_lime]
-fab.backgroundTintList =  kite.colorStateList[R.color.md_lime]
-fab.text =                kite.string[R.string.ride]
+fab.rippleColor =         Kite.color[R.color.md_light_lime]
+fab.backgroundTintList =  Kite.colorStateList[R.color.md_lime]
+fab.text =                Kite.string[R.string.ride]
 
 // Standard
 fab.rippleColor =         ContextCompact.getColor(appContext, R.color.md_light_lime)
