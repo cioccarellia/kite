@@ -5,8 +5,9 @@
 <p align="center">Android Resource Wrapper Library.</p>
 <p align="center">
   <a href="https://bintray.com/cioccarellia/maven/kite/_latestVersion"><img src="https://api.bintray.com/packages/cioccarellia/maven/kite/images/download.svg" alt="Download from Bintray"></a>
+  <a href="https://android-arsenal.com/details/1/8194"><img src="https://img.shields.io/badge/Android%20Arsenal-kite-brightgreen.svg?style=flat" alt="Android Arsenal"></a>
   <a href="https://app.circleci.com/pipelines/github/cioccarellia/kite"><img src="https://circleci.com/gh/cioccarellia/kite.svg?style=svg" alt="CircleCI"></a>
-  <a href="https://www.codacy.com/gh/cioccarellia/kite/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cioccarellia/kite&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/91fb67a5494d4767b71c7bf99810c1c9" alt="Codacy"></a>
+  <a href="https://www.codacy.com/gh/cioccarellia/kite/dashboard"><img src="https://app.codacy.com/project/badge/Grade/91fb67a5494d4767b71c7bf99810c1c9" alt="Codacy"></a>
   <a><img src="https://img.shields.io/badge/kotlin-1.4.10-orange.svg" alt="Kotlin"></a>
   <a><img src="https://img.shields.io/badge/min-14-00e676.svg" alt="Android Min Sdk"></a>
   <a><img src="https://img.shields.io/badge/compile-30-00e676.svg" alt="Android Compile Version"></a>
@@ -84,4 +85,3 @@ fab.text =                appContext.getString(R.string.ride)
 
 ## :stop_sign: Known Issues
 - Annotation checks over resource parameters (functions which take as argument some annotated value, like `@ColorRes`, `@StringRes`) are not extensively performed by Android Studio, when using kotlin operator functions: I created a bug report at google issue tracker [here](https://issuetracker.google.com/issues/173628041). Hope to see it fixed soon.
-- After {@link Build.VERSION_CODES#R}, {@link Resources} must be obtained by {@link android.app.Activity} or {@link android.content.Context} created with {@link android.content.Context#createWindowContext(int, Bundle)}. {@link Application#getResources()} may report wrong values in multi-window or on secondary displays.
