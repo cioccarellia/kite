@@ -27,5 +27,5 @@ import com.cioccarellia.kite.resparser.KiteResParser
 class KiteBools : KiteResParser<@BoolRes Int, Boolean>() {
     override operator fun get(
         @BoolRes @IntRange(from = 1) boolean: Int
-    ): Boolean = appContext.resources.getBoolean(boolean)
+    ): Boolean = kiteContext.resources.getBoolean(boolean)
 }

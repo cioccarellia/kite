@@ -29,10 +29,10 @@ import java.io.InputStream
 class KiteRaws : KiteResParser<@RawRes Int, InputStream>() {
     override operator fun get(
         @RawRes @IntRange(from = 1) raw: Int
-    ): InputStream = appContext.resources.openRawResource(raw)
+    ): InputStream = kiteContext.resources.openRawResource(raw)
 
     operator fun get(
         @RawRes raw: Int,
         value: TypedValue
-    ): InputStream = appContext.resources.openRawResource(raw, value)
+    ): InputStream = kiteContext.resources.openRawResource(raw, value)
 }

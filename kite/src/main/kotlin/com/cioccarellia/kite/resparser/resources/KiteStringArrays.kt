@@ -27,5 +27,5 @@ import com.cioccarellia.kite.resparser.KiteResParser
 class KiteStringArrays : KiteResParser<@ArrayRes Int, Array<out String>>() {
     override operator fun get(
         @ArrayRes @IntRange(from = 1) stringArray: Int
-    ): Array<out String> = appContext.resources.getStringArray(stringArray)
+    ): Array<out String> = kiteContext.resources.getStringArray(stringArray)
 }

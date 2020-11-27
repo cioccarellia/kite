@@ -16,12 +16,20 @@
 package com.cioccarellia.kite.resparser
 
 import android.content.Context
+import androidx.annotation.RestrictTo
 import com.cioccarellia.kite.Kite
 
 /**
  * Represents a Kite parser entity
  * */
 abstract class KiteParser {
-    internal val appContext: Context
-        get() = Kite.appContext
+    internal var kiteContext: Context
+        @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
+        get() {
+            return Kite.context
+        }
+        @RestrictTo(RestrictTo.Scope.LIBRARY)
+        set(value) {
+            Kite.context = value
+        }
 }

@@ -27,5 +27,5 @@ import com.cioccarellia.kite.resparser.KiteResParser
 class KiteIntegers : KiteResParser<@IntegerRes Int, Int>() {
     override operator fun get(
         @IntegerRes @IntRange(from = 1) integer: Int
-    ): Int = appContext.resources.getInteger(integer)
+    ): Int = kiteContext.resources.getInteger(integer)
 }

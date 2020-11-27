@@ -31,5 +31,5 @@ class KiteFonts : KiteResParser<@FontRes Int, Typeface>() {
     @RequiresApi(Build.VERSION_CODES.O)
     override operator fun get(
         @FontRes @IntRange(from = 1) font: Int
-    ): Typeface = appContext.resources.getFont(font)
+    ): Typeface = kiteContext.resources.getFont(font)
 }

@@ -32,11 +32,11 @@ import com.cioccarellia.kite.resparser.KiteResParser
 class KiteDrawables : KiteResParser<@DrawableRes Int, Drawable>() {
     override operator fun get(
         @DrawableRes @IntRange(from = 1) drawable: Int
-    ): Drawable = ContextCompat.getDrawable(appContext, drawable)!!
+    ): Drawable = ContextCompat.getDrawable(kiteContext, drawable)!!
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     operator fun get(
         @DrawableRes @IntRange(from = 1) drawable: Int,
         theme: Resources.Theme?
-    ): Drawable = appContext.resources.getDrawable(drawable, theme)!!
+    ): Drawable = kiteContext.resources.getDrawable(drawable, theme)!!
 }

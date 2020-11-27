@@ -15,17 +15,33 @@
  */
 package com.cioccarellia.sample
 
+import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.cioccarellia.kite.Kite
+import com.cioccarellia.kite.extensions.runInContext
 
 class MainActivity : AppCompatActivity() {
     private val inputView by lazy { findViewById<TextView>(R.id.inputView) }
     private val buttonView by lazy { findViewById<Button>(R.id.buttonView) }
 
+    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        inputView.setHintTextColor(
+            Kite.color[R.color.md_red]
+        )
+
+        // Runs inside activity context
+        Kite.color.runInContext(this) {
+            buttonView.setBackgroundColor(
+                Kite.color[R.color.colorAccent]
+            )
+        }
     }
 }

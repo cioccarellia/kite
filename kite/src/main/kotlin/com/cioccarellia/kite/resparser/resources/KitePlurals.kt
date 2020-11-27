@@ -28,11 +28,11 @@ class KitePlurals : KiteParser() {
     operator fun get(
         @PluralsRes @IntRange(from = 1) plurals: Int,
         quantity: Int
-    ): String = appContext.resources.getQuantityString(plurals, quantity)
+    ): String = kiteContext.resources.getQuantityString(plurals, quantity)
 
     operator fun get(
         @PluralsRes @IntRange(from = 1) plurals: Int,
         quantity: Int,
         vararg formatArgs: String
-    ): String = appContext.resources.getQuantityString(plurals, quantity, formatArgs)
+    ): String = kiteContext.resources.getQuantityString(plurals, quantity, formatArgs)
 }

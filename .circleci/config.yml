@@ -27,6 +27,3 @@ jobs:
       - run:
           name: "Run Tests"
           command: ./gradlew test
-      - run:
-          name: "CodeCov"
-          command: bash <(curl -s https://codecov.io/bash)

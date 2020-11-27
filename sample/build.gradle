@@ -24,4 +24,7 @@ dependencies {
     implementation deps.androidx.app_compat
     implementation deps.androidx.constraint_layout
     implementation deps.kotlin.stdlib8
+
+    implementation deps.debug.timber
+    debugImplementation deps.debug.leakcanary
 }

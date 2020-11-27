@@ -27,5 +27,5 @@ class KiteIdentifier : KiteParser() {
         name: String,
         defType: String,
         defPackage: String
-    ): Int = appContext.resources.getIdentifier(name, defType, defPackage)
+    ): Int = kiteContext.resources.getIdentifier(name, defType, defPackage)
 }

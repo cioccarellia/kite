@@ -21,8 +21,8 @@ ext.library = [
         artifact            : "kite",
 
         publish_group       : "com.cioccarellia",
-        publish_version     : "1.0.0",
-        publish_version_code: 100,
+        publish_version     : "1.0.1",
+        publish_version_code: 101,
 
         description         : "(none)",
         website             : "https://github.com/cioccarellia/kite"

@@ -27,10 +27,10 @@ import com.cioccarellia.kite.resparser.KiteResParser
 class KiteStrings : KiteResParser<@StringRes Int, String>() {
     override operator fun get(
         @StringRes @IntRange(from = 1) string: Int
-    ): String = appContext.getString(string)
+    ): String = kiteContext.getString(string)
 
     operator fun get(
         @StringRes @IntRange(from = 1) string: Int,
         vararg formatArguments: String
-    ): String = appContext.getString(string, formatArguments)
+    ): String = kiteContext.getString(string, formatArguments)
 }

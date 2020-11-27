@@ -21,11 +21,9 @@ import android.content.res.TypedArray
 import android.content.res.XmlResourceParser
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.util.TypedValue
 import android.view.animation.Animation
 import android.view.animation.Interpolator
-import androidx.annotation.RequiresApi
 import androidx.annotation.RestrictTo
 import com.cioccarellia.kite.resparser.compat.KiteColorStateLists
 import com.cioccarellia.kite.resparser.compat.KiteColors
@@ -37,24 +35,16 @@ import com.cioccarellia.kite.resparser.custom.KiteInterpolators
 import com.cioccarellia.kite.resparser.resources.*
 import java.io.InputStream
 
-/**
- * Kite class
- * */
-class Kite internal constructor() {
-    companion object {
-        @RestrictTo(RestrictTo.Scope.LIBRARY)
-        internal lateinit var appContext: Context
-
-        /**
-         * Initialize kite and returns an instance.
-         *
-         * @param applicationContext The application context
-         * */
-        fun fly(applicationContext: Context) = run {
-            appContext = applicationContext
-            Kite()
-        }
+object Kite {
+    /**
+     * Initialized Kite
+     * */
+    fun fly(context: Context) {
+        this.context = context
     }
+
+    @RestrictTo(RestrictTo.Scope.LIBRARY)
+    internal lateinit var context: Context
 
     /**
      * Fetches [String]s from resources.

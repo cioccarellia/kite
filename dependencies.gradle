@@ -58,7 +58,8 @@ ext.deps = [
         ],
 
         debug         : [
-                timber: "com.jakewharton.timber:timber:4.7.1"
+                timber    : "com.jakewharton.timber:timber:4.7.1",
+                leakcanary: 'com.squareup.leakcanary:leakcanary-android:2.5'
         ],
 
         test          : [

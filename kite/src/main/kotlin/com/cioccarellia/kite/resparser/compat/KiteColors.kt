@@ -30,5 +30,5 @@ class KiteColors : KiteResParser<@ColorRes Int, @ColorInt Int>() {
     @ColorInt
     override operator fun get(
         @ColorRes @IntRange(from = 1) color: Int
-    ): Int = ContextCompat.getColor(appContext, color)
+    ): Int = ContextCompat.getColor(kiteContext, color)
 }

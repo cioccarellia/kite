@@ -29,5 +29,5 @@ class KiteFraction : KiteParser() {
         @FractionRes @IntRange(from = 1) fraction: Int,
         @IntRange(from = 2) base: Int,
         @IntRange(from = 2) pbase: Int
-    ): Float = appContext.resources.getFraction(fraction, base, pbase)
+    ): Float = kiteContext.resources.getFraction(fraction, base, pbase)
 }

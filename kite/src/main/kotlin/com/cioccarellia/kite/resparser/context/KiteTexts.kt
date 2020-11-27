@@ -27,5 +27,5 @@ import com.cioccarellia.kite.resparser.KiteResParser
 class KiteTexts : KiteResParser<@StringRes Int, CharSequence>() {
     override operator fun get(
         @StringRes @IntRange(from = 1) text: Int
-    ): CharSequence = appContext.getText(text)
+    ): CharSequence = kiteContext.getText(text)
 }

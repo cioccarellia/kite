@@ -8,7 +8,7 @@
   <a href="https://android-arsenal.com/details/1/8194"><img src="https://img.shields.io/badge/Android%20Arsenal-kite-brightgreen.svg?style=flat" alt="Android Arsenal"></a>
   <a href="https://app.circleci.com/pipelines/github/cioccarellia/kite"><img src="https://circleci.com/gh/cioccarellia/kite.svg?style=svg" alt="CircleCI"></a>
   <a href="https://www.codacy.com/gh/cioccarellia/kite/dashboard"><img src="https://app.codacy.com/project/badge/Grade/91fb67a5494d4767b71c7bf99810c1c9" alt="Codacy"></a>
-  <a><img src="https://img.shields.io/badge/kotlin-1.4.10-orange.svg" alt="Kotlin"></a>
+  <a><img src="https://img.shields.io/badge/kotlin-1.4.20-orange.svg" alt="Kotlin"></a>
   <a><img src="https://img.shields.io/badge/min-14-00e676.svg" alt="Android Min Sdk"></a>
   <a><img src="https://img.shields.io/badge/compile-30-00e676.svg" alt="Android Compile Version"></a>
   <a href="https://github.com/cioccarellia/kite/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License"></a>
@@ -17,7 +17,7 @@
 ## TLDR
 Fed up with typing `ContextCompact`, `resources` and `context` all over your apps to access your resources? Say no more.
 ```gradle
-implementation 'com.cioccarellia:kite:1.0.0'
+implementation 'com.cioccarellia:kite:1.0.1'
 ```
 
 - :kite: Access all app resources with one unified syntax.
@@ -32,15 +32,9 @@ Initialize the kite global object (ideally inside your `Application` class) and 
 
 ```kotlin
 class App : Application() {
-
-    companion object {
-        lateinit var appContext: Context
-        val kite by lazy { Kite.fly(appContext) }
-    }
-
     override fun onCreate() {
         super.onCreate()
-        appContext = this
+        Kite.fly(this)
     }
 }
 ```

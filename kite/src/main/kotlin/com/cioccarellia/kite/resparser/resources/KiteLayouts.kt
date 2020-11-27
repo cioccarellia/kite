@@ -28,5 +28,5 @@ import com.cioccarellia.kite.resparser.KiteResParser
 class KiteLayouts : KiteResParser<@LayoutRes Int, XmlResourceParser>() {
     override operator fun get(
         @LayoutRes @IntRange(from = 1) layout: Int
-    ): XmlResourceParser = appContext.resources.getLayout(layout)
+    ): XmlResourceParser = kiteContext.resources.getLayout(layout)
 }

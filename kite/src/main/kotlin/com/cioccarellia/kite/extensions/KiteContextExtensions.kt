@@ -13,19 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.resources
+package com.cioccarellia.kite.extensions
 
-import androidx.annotation.DimenRes
-import androidx.annotation.IntRange
-import com.cioccarellia.kite.resparser.KiteResParser
+import android.content.Context
+import com.cioccarellia.kite.Kite
+import com.cioccarellia.kite.resparser.KiteParser
 
-/**
- * KiteDimens Implementation
- * */
-class KiteDimensions : KiteResParser<@DimenRes Int, Float>() {
-    override operator fun get(
-        @DimenRes @IntRange(from = 1) dimension: Int
-    ): Float = kiteContext.resources.getDimension(dimension)
+internal fun <T : KiteParser> T.getContext(context: Context) = Kite.context
+
+internal fun <T : KiteParser> T.changeContext(context: Context): T = apply {
+    Kite.context = context
 }
+
+fun <T : KiteParser, R> T.runInContext(context: Context, block: T.() -> R): R = run {
+    val previousContext = Kite.context
+    changeContext(context).block().also {
+        changeContext(previousContext)
+    }
+}
+
