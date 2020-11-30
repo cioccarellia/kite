@@ -34,5 +34,5 @@ class KitePlurals : KiteParser() {
         @PluralsRes @IntRange(from = 1) plurals: Int,
         quantity: Int,
         vararg formatArgs: String
-    ): String = kiteContext.resources.getQuantityString(plurals, quantity, formatArgs)
+    ): String = kiteContext.resources.getQuantityString(plurals, quantity, *formatArgs)
 }

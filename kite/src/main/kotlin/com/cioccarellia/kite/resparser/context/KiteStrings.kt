@@ -31,6 +31,6 @@ class KiteStrings : KiteResParser<@StringRes Int, String>() {
 
     operator fun get(
         @StringRes @IntRange(from = 1) string: Int,
-        vararg formatArguments: String
-    ): String = kiteContext.getString(string, formatArguments)
+        vararg formatArguments: Any
+    ): String = kiteContext.getString(string, *formatArguments)
 }
