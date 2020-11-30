@@ -20,4 +20,5 @@ package com.cioccarellia.kite.resparser
  * */
 abstract class KiteResParser<in R, out O> : KiteParser() {
     abstract operator fun get(resource: R): O
+    fun fetch(resource: R): O = get(resource)
 }
