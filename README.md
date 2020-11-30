@@ -17,7 +17,7 @@
 ## TLDR
 Fed up with typing `ContextCompact`, `resources` and `context` all over your apps to access your resources? Say no more.
 ```gradle
-implementation 'com.cioccarellia:kite:1.0.1'
+implementation 'com.cioccarellia:kite:1.0.2'
 ```
 
 - :kite: Access all app resources with one unified syntax.
