@@ -19,12 +19,12 @@ package com.cioccarellia.kite.resparser.resources
 
 import androidx.annotation.IntRange
 import androidx.annotation.PluralsRes
-import com.cioccarellia.kite.resparser.KiteParser
+import com.cioccarellia.kite.resparser.KiteCustomResParser
 
 /**
  * KitePlurals Implementation
  * */
-class KitePlurals : KiteParser() {
+class KitePlurals : KiteCustomResParser<@PluralsRes Int, String>() {
     operator fun get(
         @PluralsRes @IntRange(from = 1) plurals: Int,
         quantity: Int

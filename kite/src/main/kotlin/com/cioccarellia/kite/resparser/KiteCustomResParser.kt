@@ -13,21 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
-
-package com.cioccarellia.kite.resparser.resources
-
-import androidx.annotation.FractionRes
-import androidx.annotation.IntRange
-import com.cioccarellia.kite.resparser.KiteCustomResParser
+package com.cioccarellia.kite.resparser
 
 /**
- * KiteFraction Implementation
+ * [KiteParser] which has precisely 1 input and 1 output
  * */
-class KiteFraction : KiteCustomResParser<@FractionRes Int, Float>() {
-    operator fun get(
-        @FractionRes @IntRange(from = 1) fraction: Int,
-        @IntRange(from = 2) base: Int,
-        @IntRange(from = 2) pbase: Int
-    ): Float = kiteContext.resources.getFraction(fraction, base, pbase)
-}
+abstract class KiteCustomResParser<in R, out O> : KiteParser()

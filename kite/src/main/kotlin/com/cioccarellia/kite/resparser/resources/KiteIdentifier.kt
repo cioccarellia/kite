@@ -17,12 +17,12 @@
 
 package com.cioccarellia.kite.resparser.resources
 
-import com.cioccarellia.kite.resparser.KiteParser
+import com.cioccarellia.kite.resparser.KiteCustomResParser
 
 /**
  * KiteIdentifier Implementation
  * */
-class KiteIdentifier : KiteParser() {
+class KiteIdentifier : KiteCustomResParser<String, Int>() {
     operator fun get(
         name: String,
         defType: String,

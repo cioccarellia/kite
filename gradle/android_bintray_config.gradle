@@ -40,16 +40,16 @@ if (module_name == null || module_name.isEmpty()) {
 }
 
 publish {
-    bintrayUser =       BINTRAY_USER
-    userOrg =           BINTRAY_ORG
-    bintrayKey =        BINTRAY_API_KEY
+    bintrayUser = BINTRAY_USER
+    userOrg = BINTRAY_ORG
+    bintrayKey = BINTRAY_API_KEY
 
-    groupId =           library.publish_group
-    artifactId =        library.artifact
+    groupId = library.publish_group
+    artifactId = library.artifact
 
-    publishVersion =    library.publish_version
+    publishVersion = library.publish_version
 
-    desc =              library.description
-    website =           library.website
-    dryRun =            false
+    desc = library.description
+    website = library.website
+    dryRun = false
 }
