@@ -20,16 +20,37 @@ import android.content.Context
 import com.cioccarellia.kite.Kite
 import com.cioccarellia.kite.resparser.KiteParser
 
-internal fun <T : KiteParser> T.getContext(context: Context) = Kite.context
+/**
+ * @return kite [Context] reference
+ * */
+fun getKiteContext() = Kite.context
 
-internal fun <T : KiteParser> T.changeContext(context: Context): T = apply {
+/**
+ * Permanently changes the context used by kite
+ * @param [context]     The context to be set as the new kite context
+ * */
+fun changeKiteContext(context: Context) {
     Kite.context = context
 }
 
-fun <T : KiteParser, R> T.runInContext(context: Context, block: T.() -> R): R = run {
-    val previousContext = Kite.context
-    changeContext(context).block().also {
-        changeContext(previousContext)
-    }
+/**
+ * Permanently changes the context used by kite
+ * @param [context]     The context to be set as the new kite context
+ * @return [T]          KiteParser instance referencing the new context
+ * */
+fun <T : KiteParser> T.changeContext(context: Context): T = apply {
+    Kite.context = context
+}
+
+/**
+ * Temporarily switches context to execute the given lambda
+ *
+ * @param [context]     The context to be temporarily set as the new kite context while the lambda runs
+ * @param [block]       The lambda to be executed
+ * @return [T]          KiteParser instance, referencing the same context it was passed with
+ * */
+fun <T : KiteParser, R> T.runWith(context: Context, block: T.() -> R): R = run {
+    val previousContext = getKiteContext()
+    changeContext(context).block().also { changeContext(previousContext) }
 }
 

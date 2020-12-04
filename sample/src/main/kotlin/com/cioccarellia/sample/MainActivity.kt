@@ -22,7 +22,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.cioccarellia.kite.Kite
-import com.cioccarellia.kite.extensions.runInContext
+import com.cioccarellia.kite.extensions.runWith
 
 class MainActivity : AppCompatActivity() {
     private val inputView by lazy { findViewById<TextView>(R.id.inputView) }
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         // Runs inside activity context
-        Kite.color.runInContext(this) {
+        Kite.color.runWith(this) {
             buttonView.setBackgroundColor(
                 Kite.color[R.color.colorAccent]
             )
