@@ -56,6 +56,14 @@ fab.backgroundTintList =  ColorStateList.valueOf(R.color.md_lime)
 fab.text =                appContext.getString(R.string.ride)
 ```
 
+## Extensions
+You can run a bunch of extensions functions with regards to context:
+- `getKiteContext` returns the current kite context
+- `changeKiteContext` changes the current kite context to the passed one
+- `KiteParser.changeContext` allows you to modify kite's context, chainable
+- `KiteParser.runWith` allows you to temporarely switch context and execute a lambda with respect to the passed context, chainable
+
+
 ## Supported Resources
 | Resource Type   	| AAPT class       	| Namespace             	| Input                                                   	| Output              	| Implementation                      	| API 	| Variants           	|
 |-----------------	|------------------	|-----------------------	|---------------------------------------------------------	|---------------------	|-------------------------------------	|-----	|--------------------	|
