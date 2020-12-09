@@ -21,8 +21,8 @@ ext.library = [
         artifact            : "kite",
 
         publish_group       : "com.cioccarellia",
-        publish_version     : "1.0.3",
-        publish_version_code: 103,
+        publish_version     : "1.0.4",
+        publish_version_code: 104,
 
         description         : "Kotlin Android Resources Wrapper Library",
         website             : "https://github.com/cioccarellia/kite"

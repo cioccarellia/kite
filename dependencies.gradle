@@ -32,8 +32,8 @@ ext.deps = [
         kotlin        : [
                 stdlib8      : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kt}",
                 coroutines   : [
-                        core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9",
-                        android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9"
+                        core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1",
+                        android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1"
                 ],
                 test         : [
                         mockito: "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
