@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/cioccarellia/kite" target="_blank"><img width="100" src="art/icon.png"></a>
+  <a href="https://github.com/cioccarellia/kite" target="_blank"><img width="100" src="art/icon_dark.png"></a>
 </p>
 <h1 align="center">Kite</h1>
 <p align="center">Android Resource Wrapper Library.</p>
