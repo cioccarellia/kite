@@ -23,13 +23,13 @@ import com.cioccarellia.kite.resparser.KiteParser
 /**
  * @return kite [Context] reference
  * */
-fun getKiteContext() = Kite.context
+public fun getKiteContext(): Context = Kite.context
 
 /**
  * Permanently changes the context used by kite
  * @param [context]     The context to be set as the new kite context
  * */
-fun changeKiteContext(context: Context) {
+public fun changeKiteContext(context: Context) {
     Kite.context = context
 }
 
@@ -38,7 +38,7 @@ fun changeKiteContext(context: Context) {
  * @param [context]     The context to be set as the new kite context
  * @return [T]          KiteParser instance referencing the new context
  * */
-fun <T : KiteParser> T.changeContext(context: Context): T = apply {
+public fun <T : KiteParser> T.changeContext(context: Context): T = apply {
     Kite.context = context
 }
 
@@ -49,7 +49,7 @@ fun <T : KiteParser> T.changeContext(context: Context): T = apply {
  * @param [block]       The lambda to be executed
  * @return [T]          KiteParser instance, referencing the same context it was passed with
  * */
-fun <T : KiteParser, R> T.runWith(context: Context, block: T.() -> R): R = run {
+public fun <T : KiteParser, R> T.runWith(context: Context, block: T.() -> R): R = run {
     val previousContext = getKiteContext()
     changeContext(context).block().also { changeContext(previousContext) }
 }

@@ -26,7 +26,7 @@ import com.cioccarellia.kite.resparser.KiteResParser
 /**
  * KiteColorStateLists Implementation
  * */
-class KiteColorStateLists : KiteResParser<@ColorRes Int, ColorStateList>() {
+internal class KiteColorStateLists : KiteResParser<@ColorRes Int, ColorStateList>() {
     override operator fun get(
         @ColorRes @IntRange(from = 1) colorStateList: Int
     ): ColorStateList = ContextCompat.getColorStateList(kiteContext, colorStateList)!!

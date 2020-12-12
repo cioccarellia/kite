@@ -26,7 +26,7 @@ import com.cioccarellia.kite.resparser.KiteResParser
 /**
  * KiteAnimations Implementation
  * */
-class KiteAnimations : KiteResParser<@AnimRes Int, Animation>() {
+internal class KiteAnimations : KiteResParser<@AnimRes Int, Animation>() {
     override operator fun get(
         @AnimRes @IntRange(from = 1) animation: Int
     ): Animation = AnimationUtils.loadAnimation(kiteContext, animation)!!

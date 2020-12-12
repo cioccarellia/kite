@@ -27,7 +27,7 @@ import com.cioccarellia.kite.resparser.KiteResParser
 /**
  * KiteFonts Implementation
  * */
-class KiteFonts : KiteResParser<@FontRes Int, Typeface>() {
+internal class KiteFonts : KiteResParser<@FontRes Int, Typeface>() {
     @RequiresApi(Build.VERSION_CODES.O)
     override operator fun get(
         @FontRes @IntRange(from = 1) font: Int

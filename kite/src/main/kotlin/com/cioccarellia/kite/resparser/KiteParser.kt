@@ -22,7 +22,7 @@ import com.cioccarellia.kite.Kite
 /**
  * Represents a Kite parser entity
  * */
-abstract class KiteParser {
+public abstract class KiteParser {
     internal var kiteContext: Context
         @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
         get() {

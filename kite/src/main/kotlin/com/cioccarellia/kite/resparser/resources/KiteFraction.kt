@@ -24,7 +24,7 @@ import com.cioccarellia.kite.resparser.KiteCustomResParser
 /**
  * KiteFraction Implementation
  * */
-class KiteFraction : KiteCustomResParser<@FractionRes Int, Float>() {
+internal class KiteFraction : KiteCustomResParser<@FractionRes Int, Float>() {
     operator fun get(
         @FractionRes @IntRange(from = 1) fraction: Int,
         @IntRange(from = 2) base: Int,

@@ -24,7 +24,7 @@ import com.cioccarellia.kite.resparser.KiteResParser
 /**
  * KiteTexts Implementation
  * */
-class KiteTexts : KiteResParser<@StringRes Int, CharSequence>() {
+internal class KiteTexts : KiteResParser<@StringRes Int, CharSequence>() {
     override operator fun get(
         @StringRes @IntRange(from = 1) text: Int
     ): CharSequence = kiteContext.getText(text)

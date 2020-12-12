@@ -26,7 +26,7 @@ import com.cioccarellia.kite.resparser.KiteResParser
 /**
  * KiteColors Implementation
  * */
-class KiteColors : KiteResParser<@ColorRes Int, @ColorInt Int>() {
+internal class KiteColors : KiteResParser<@ColorRes Int, @ColorInt Int>() {
     @ColorInt
     override operator fun get(
         @ColorRes @IntRange(from = 1) color: Int

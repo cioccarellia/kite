@@ -22,7 +22,7 @@ import com.cioccarellia.kite.resparser.KiteCustomResParser
 /**
  * KiteIdentifier Implementation
  * */
-class KiteIdentifier : KiteCustomResParser<String, Int>() {
+internal class KiteIdentifier : KiteCustomResParser<String, Int>() {
     operator fun get(
         name: String,
         defType: String,

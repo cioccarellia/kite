@@ -18,4 +18,4 @@ package com.cioccarellia.kite.resparser
 /**
  * [KiteParser] which has precisely 1 input and 1 output
  * */
-abstract class KiteCustomResParser<in R, out O> : KiteParser()
+public abstract class KiteCustomResParser<in R, out O> : KiteParser()
