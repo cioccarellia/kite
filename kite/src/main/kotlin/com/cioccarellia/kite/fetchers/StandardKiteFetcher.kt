@@ -13,20 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
-
-package com.cioccarellia.kite.resparser.resources
-
-import android.content.res.XmlResourceParser
-import androidx.annotation.IntRange
-import androidx.annotation.XmlRes
-import com.cioccarellia.kite.resparser.KiteResParser
+package com.cioccarellia.kite.fetchers
 
 /**
- * KiteXmls Implementation
+ * [KiteFetcher] which is defined to have precisely 1 input type [R] (Resource) and 1 output type [O] (Output).
+ * It compatible and backed by the index operator with a canonical signature.
  * */
-internal class KiteXmls : KiteResParser<@XmlRes Int, XmlResourceParser>() {
-    override operator fun get(
-        @XmlRes @IntRange(from = 1) xml: Int
-    ): XmlResourceParser = kiteContext.resources.getXml(xml)
+public abstract class StandardKiteFetcher<in R, out O> : KiteFetcher() {
+    public abstract operator fun get(resource: R): O
 }

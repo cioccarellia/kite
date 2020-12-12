@@ -13,19 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
-
-package com.cioccarellia.kite.resparser.resources
-
-import androidx.annotation.ArrayRes
-import androidx.annotation.IntRange
-import com.cioccarellia.kite.resparser.KiteResParser
+package com.cioccarellia.kite.fetchers
 
 /**
- * KiteStringArrays Implementation
+ * [KiteFetcher] which is defined to have precisely 1 input type [R] (Resource) and 1 output type [O] (Output)
  * */
-internal class KiteStringArrays : KiteResParser<@ArrayRes Int, Array<out String>>() {
-    override operator fun get(
-        @ArrayRes @IntRange(from = 1) stringArray: Int
-    ): Array<out String> = kiteContext.resources.getStringArray(stringArray)
-}
+public abstract class CustomKiteFetcher<in R, out O> : KiteFetcher()

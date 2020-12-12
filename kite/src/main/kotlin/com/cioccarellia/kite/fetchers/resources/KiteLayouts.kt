@@ -15,24 +15,18 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.resources
+package com.cioccarellia.kite.fetchers.resources
 
+import android.content.res.XmlResourceParser
 import androidx.annotation.IntRange
-import androidx.annotation.PluralsRes
-import com.cioccarellia.kite.resparser.KiteCustomResParser
+import androidx.annotation.LayoutRes
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * KitePlurals Implementation
+ * [KiteLayouts] Implementation
  * */
-internal class KitePlurals : KiteCustomResParser<@PluralsRes Int, String>() {
-    operator fun get(
-        @PluralsRes @IntRange(from = 1) plurals: Int,
-        quantity: Int
-    ): String = kiteContext.resources.getQuantityString(plurals, quantity)
-
-    operator fun get(
-        @PluralsRes @IntRange(from = 1) plurals: Int,
-        quantity: Int,
-        vararg formatArgs: String
-    ): String = kiteContext.resources.getQuantityString(plurals, quantity, *formatArgs)
+internal class KiteLayouts : StandardKiteFetcher<@LayoutRes Int, XmlResourceParser>() {
+    override operator fun get(
+        @LayoutRes @IntRange(from = 1) layout: Int
+    ): XmlResourceParser = kiteContext.resources.getLayout(layout)
 }

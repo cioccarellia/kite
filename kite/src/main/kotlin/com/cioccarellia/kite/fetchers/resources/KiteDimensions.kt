@@ -15,22 +15,17 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.context
+package com.cioccarellia.kite.fetchers.resources
 
+import androidx.annotation.DimenRes
 import androidx.annotation.IntRange
-import androidx.annotation.StringRes
-import com.cioccarellia.kite.resparser.KiteResParser
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * KiteStrings Implementation
+ * [KiteDimens] Implementation
  * */
-internal class KiteStrings : KiteResParser<@StringRes Int, String>() {
+internal class KiteDimensions : StandardKiteFetcher<@DimenRes Int, Float>() {
     override operator fun get(
-        @StringRes @IntRange(from = 1) string: Int
-    ): String = kiteContext.getString(string)
-
-    operator fun get(
-        @StringRes @IntRange(from = 1) string: Int,
-        vararg formatArguments: Any
-    ): String = kiteContext.getString(string, *formatArguments)
+        @DimenRes @IntRange(from = 1) dimension: Int
+    ): Float = kiteContext.resources.getDimension(dimension)
 }

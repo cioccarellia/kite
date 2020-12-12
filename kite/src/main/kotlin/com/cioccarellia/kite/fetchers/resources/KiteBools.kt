@@ -15,17 +15,17 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.resources
+package com.cioccarellia.kite.fetchers.resources
 
-import com.cioccarellia.kite.resparser.KiteCustomResParser
+import androidx.annotation.BoolRes
+import androidx.annotation.IntRange
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * KiteIdentifier Implementation
+ * [KiteBools] Implementation
  * */
-internal class KiteIdentifier : KiteCustomResParser<String, Int>() {
-    operator fun get(
-        name: String,
-        defType: String,
-        defPackage: String
-    ): Int = kiteContext.resources.getIdentifier(name, defType, defPackage)
+internal class KiteBools : StandardKiteFetcher<@BoolRes Int, Boolean>() {
+    override operator fun get(
+        @BoolRes @IntRange(from = 1) boolean: Int
+    ): Boolean = kiteContext.resources.getBoolean(boolean)
 }

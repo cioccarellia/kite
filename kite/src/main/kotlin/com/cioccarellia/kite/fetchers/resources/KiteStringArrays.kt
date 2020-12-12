@@ -15,24 +15,17 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.resources
+package com.cioccarellia.kite.fetchers.resources
 
-import android.util.TypedValue
+import androidx.annotation.ArrayRes
 import androidx.annotation.IntRange
-import androidx.annotation.RawRes
-import com.cioccarellia.kite.resparser.KiteResParser
-import java.io.InputStream
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * KiteRaws Implementation
+ * [KiteStringArrays] Implementation
  * */
-internal class KiteRaws : KiteResParser<@RawRes Int, InputStream>() {
+internal class KiteStringArrays : StandardKiteFetcher<@ArrayRes Int, Array<out String>>() {
     override operator fun get(
-        @RawRes @IntRange(from = 1) raw: Int
-    ): InputStream = kiteContext.resources.openRawResource(raw)
-
-    operator fun get(
-        @RawRes raw: Int,
-        value: TypedValue
-    ): InputStream = kiteContext.resources.openRawResource(raw, value)
+        @ArrayRes @IntRange(from = 1) stringArray: Int
+    ): Array<out String> = kiteContext.resources.getStringArray(stringArray)
 }

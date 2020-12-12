@@ -15,19 +15,24 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.custom
+package com.cioccarellia.kite.fetchers.resources
 
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import androidx.annotation.AnimRes
 import androidx.annotation.IntRange
-import com.cioccarellia.kite.resparser.KiteResParser
+import androidx.annotation.PluralsRes
+import com.cioccarellia.kite.fetchers.CustomKiteFetcher
 
 /**
- * KiteAnimations Implementation
+ * [KitePlurals] Implementation
  * */
-internal class KiteAnimations : KiteResParser<@AnimRes Int, Animation>() {
-    override operator fun get(
-        @AnimRes @IntRange(from = 1) animation: Int
-    ): Animation = AnimationUtils.loadAnimation(kiteContext, animation)!!
+internal class KitePlurals : CustomKiteFetcher<@PluralsRes Int, String>() {
+    operator fun get(
+        @PluralsRes @IntRange(from = 1) plurals: Int,
+        quantity: Int
+    ): String = kiteContext.resources.getQuantityString(plurals, quantity)
+
+    operator fun get(
+        @PluralsRes @IntRange(from = 1) plurals: Int,
+        quantity: Int,
+        vararg formatArgs: String
+    ): String = kiteContext.resources.getQuantityString(plurals, quantity, *formatArgs)
 }

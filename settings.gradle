@@ -14,4 +14,4 @@
  * limitations under the License.
  */
 
-include ':sample', ':kite'
+include ':kite', ':sample'

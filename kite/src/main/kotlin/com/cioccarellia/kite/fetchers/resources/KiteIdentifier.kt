@@ -15,18 +15,17 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.resources
+package com.cioccarellia.kite.fetchers.resources
 
-import android.content.res.XmlResourceParser
-import androidx.annotation.IntRange
-import androidx.annotation.LayoutRes
-import com.cioccarellia.kite.resparser.KiteResParser
+import com.cioccarellia.kite.fetchers.CustomKiteFetcher
 
 /**
- * KiteLayouts Implementation
+ * [KiteIdentifier] Implementation
  * */
-internal class KiteLayouts : KiteResParser<@LayoutRes Int, XmlResourceParser>() {
-    override operator fun get(
-        @LayoutRes @IntRange(from = 1) layout: Int
-    ): XmlResourceParser = kiteContext.resources.getLayout(layout)
+internal class KiteIdentifier : CustomKiteFetcher<String, Int>() {
+    operator fun get(
+        name: String,
+        defType: String,
+        defPackage: String
+    ): Int = kiteContext.resources.getIdentifier(name, defType, defPackage)
 }

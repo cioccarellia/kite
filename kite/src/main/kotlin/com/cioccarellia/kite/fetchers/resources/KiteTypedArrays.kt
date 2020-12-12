@@ -15,17 +15,17 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.resources
+package com.cioccarellia.kite.fetchers.resources
 
 import android.content.res.TypedArray
 import androidx.annotation.ArrayRes
 import androidx.annotation.IntRange
-import com.cioccarellia.kite.resparser.KiteResParser
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * KiteTypedArrays Implementation
+ * [KiteTypedArrays] Implementation
  * */
-internal class KiteTypedArrays : KiteResParser<@ArrayRes Int, TypedArray>() {
+internal class KiteTypedArrays : StandardKiteFetcher<@ArrayRes Int, TypedArray>() {
     override operator fun get(
         @ArrayRes @IntRange(from = 1) typedArray: Int
     ): TypedArray = kiteContext.resources.obtainTypedArray(typedArray)

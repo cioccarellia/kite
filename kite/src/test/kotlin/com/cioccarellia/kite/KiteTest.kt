@@ -15,4 +15,4 @@
  */
 package com.cioccarellia.kite
 
-class KiteTest
+public class KiteTest

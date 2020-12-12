@@ -13,23 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.cioccarellia.kite.resparser
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-import android.content.Context
-import androidx.annotation.RestrictTo
-import com.cioccarellia.kite.Kite
+package com.cioccarellia.kite.fetchers.context
+
+import androidx.annotation.IntRange
+import androidx.annotation.StringRes
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * Represents a Kite parser entity
+ * [KiteTexts] Implementation
  * */
-public abstract class KiteParser {
-    internal var kiteContext: Context
-        @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
-        get() {
-            return Kite.context
-        }
-        @RestrictTo(RestrictTo.Scope.LIBRARY)
-        set(value) {
-            Kite.context = value
-        }
+internal class KiteTexts : StandardKiteFetcher<@StringRes Int, CharSequence>() {
+    override operator fun get(
+        @StringRes @IntRange(from = 1) text: Int
+    ): CharSequence = kiteContext.getText(text)
 }

@@ -15,20 +15,19 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.compat
+package com.cioccarellia.kite.fetchers.compat
 
-import androidx.annotation.ColorInt
+import android.content.res.ColorStateList
 import androidx.annotation.ColorRes
 import androidx.annotation.IntRange
 import androidx.core.content.ContextCompat
-import com.cioccarellia.kite.resparser.KiteResParser
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * KiteColors Implementation
+ * [KiteColorStateLists] Implementation
  * */
-internal class KiteColors : KiteResParser<@ColorRes Int, @ColorInt Int>() {
-    @ColorInt
+internal class KiteColorStateLists : StandardKiteFetcher<@ColorRes Int, ColorStateList>() {
     override operator fun get(
-        @ColorRes @IntRange(from = 1) color: Int
-    ): Int = ContextCompat.getColor(kiteContext, color)
+        @ColorRes @IntRange(from = 1) colorStateList: Int
+    ): ColorStateList = ContextCompat.getColorStateList(kiteContext, colorStateList)!!
 }

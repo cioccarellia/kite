@@ -15,19 +15,17 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.custom
+package com.cioccarellia.kite.fetchers.resources
 
-import android.view.animation.AnimationUtils
-import android.view.animation.Interpolator
 import androidx.annotation.IntRange
-import androidx.annotation.InterpolatorRes
-import com.cioccarellia.kite.resparser.KiteResParser
+import androidx.annotation.IntegerRes
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * KiteInterpolators Implementation
+ * [KiteIntegers] Implementation
  * */
-internal class KiteInterpolators : KiteResParser<@InterpolatorRes Int, Interpolator>() {
+internal class KiteIntegers : StandardKiteFetcher<@IntegerRes Int, Int>() {
     override operator fun get(
-        @InterpolatorRes @IntRange(from = 1) animation: Int
-    ): Interpolator = AnimationUtils.loadInterpolator(kiteContext, animation)!!
+        @IntegerRes @IntRange(from = 1) integer: Int
+    ): Int = kiteContext.resources.getInteger(integer)
 }

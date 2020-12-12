@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.resources
+package com.cioccarellia.kite.internal
 
-import androidx.annotation.IntRange
-import androidx.annotation.IntegerRes
-import com.cioccarellia.kite.resparser.KiteResParser
+import android.content.Context
+import com.cioccarellia.kite.Kite
+import com.cioccarellia.kite.fetchers.KiteFetcher
 
-/**
- * KiteIntegers Implementation
- * */
-internal class KiteIntegers : KiteResParser<@IntegerRes Int, Int>() {
-    override operator fun get(
-        @IntegerRes @IntRange(from = 1) integer: Int
-    ): Int = kiteContext.resources.getInteger(integer)
+internal inline fun KiteFetcher.switchContext(
+    targetContext: Context,
+    lambda: (KiteFetcher) -> Unit
+): KiteFetcher = apply {
+    val initialContext = Kite.context
+    Kite.context = targetContext
+    lambda(this)
+    Kite.context = initialContext
 }

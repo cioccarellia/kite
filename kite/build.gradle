@@ -22,9 +22,11 @@ dependencies {
     implementation deps.kotlin.stdlib8
     implementation deps.androidx.core
 
+    testImplementation deps.test.junit
+    testImplementation deps.test.androidx_test_core
+    testImplementation deps.test.androidx_test_runner_espresso
     testImplementation deps.kotlin.test.mockito
     testImplementation deps.test.robolectric
-    testImplementation deps.test.junit
     testImplementation deps.test.mockito_core
     testImplementation deps.test.truth
 }

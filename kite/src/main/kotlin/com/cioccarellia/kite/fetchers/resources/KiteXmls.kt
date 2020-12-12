@@ -15,21 +15,18 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.resources
+package com.cioccarellia.kite.fetchers.resources
 
-import android.graphics.Typeface
-import android.os.Build
-import androidx.annotation.FontRes
+import android.content.res.XmlResourceParser
 import androidx.annotation.IntRange
-import androidx.annotation.RequiresApi
-import com.cioccarellia.kite.resparser.KiteResParser
+import androidx.annotation.XmlRes
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * KiteFonts Implementation
+ * [KiteXmls] Implementation
  * */
-internal class KiteFonts : KiteResParser<@FontRes Int, Typeface>() {
-    @RequiresApi(Build.VERSION_CODES.O)
+internal class KiteXmls : StandardKiteFetcher<@XmlRes Int, XmlResourceParser>() {
     override operator fun get(
-        @FontRes @IntRange(from = 1) font: Int
-    ): Typeface = kiteContext.resources.getFont(font)
+        @XmlRes @IntRange(from = 1) xml: Int
+    ): XmlResourceParser = kiteContext.resources.getXml(xml)
 }

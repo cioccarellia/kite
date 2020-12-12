@@ -15,28 +15,21 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.compat
+package com.cioccarellia.kite.fetchers.resources
 
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
+import android.graphics.Typeface
 import android.os.Build
-import androidx.annotation.DrawableRes
+import androidx.annotation.FontRes
 import androidx.annotation.IntRange
 import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat
-import com.cioccarellia.kite.resparser.KiteResParser
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * KiteDrawables Implementation
+ * [KiteFonts] Implementation
  * */
-internal class KiteDrawables : KiteResParser<@DrawableRes Int, Drawable>() {
+internal class KiteFonts : StandardKiteFetcher<@FontRes Int, Typeface>() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override operator fun get(
-        @DrawableRes @IntRange(from = 1) drawable: Int
-    ): Drawable = ContextCompat.getDrawable(kiteContext, drawable)!!
-
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-    operator fun get(
-        @DrawableRes @IntRange(from = 1) drawable: Int,
-        theme: Resources.Theme?
-    ): Drawable = kiteContext.resources.getDrawable(drawable, theme)!!
+        @FontRes @IntRange(from = 1) font: Int
+    ): Typeface = kiteContext.resources.getFont(font)
 }

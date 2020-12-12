@@ -15,17 +15,19 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.resources
+package com.cioccarellia.kite.fetchers.resources
 
-import androidx.annotation.DimenRes
+import androidx.annotation.FractionRes
 import androidx.annotation.IntRange
-import com.cioccarellia.kite.resparser.KiteResParser
+import com.cioccarellia.kite.fetchers.CustomKiteFetcher
 
 /**
- * KiteDimens Implementation
+ * [KiteFraction] Implementation
  * */
-internal class KiteDimensions : KiteResParser<@DimenRes Int, Float>() {
-    override operator fun get(
-        @DimenRes @IntRange(from = 1) dimension: Int
-    ): Float = kiteContext.resources.getDimension(dimension)
+internal class KiteFraction : CustomKiteFetcher<@FractionRes Int, Float>() {
+    operator fun get(
+        @FractionRes @IntRange(from = 1) fraction: Int,
+        @IntRange(from = 2) base: Int,
+        @IntRange(from = 2) pbase: Int
+    ): Float = kiteContext.resources.getFraction(fraction, base, pbase)
 }

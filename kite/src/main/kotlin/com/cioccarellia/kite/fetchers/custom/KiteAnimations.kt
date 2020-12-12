@@ -15,17 +15,19 @@
  */
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
 
-package com.cioccarellia.kite.resparser.context
+package com.cioccarellia.kite.fetchers.custom
 
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import androidx.annotation.AnimRes
 import androidx.annotation.IntRange
-import androidx.annotation.StringRes
-import com.cioccarellia.kite.resparser.KiteResParser
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * KiteTexts Implementation
+ * [KiteAnimations] Implementation
  * */
-internal class KiteTexts : KiteResParser<@StringRes Int, CharSequence>() {
+internal class KiteAnimations : StandardKiteFetcher<@AnimRes Int, Animation>() {
     override operator fun get(
-        @StringRes @IntRange(from = 1) text: Int
-    ): CharSequence = kiteContext.getText(text)
+        @AnimRes @IntRange(from = 1) animation: Int
+    ): Animation = AnimationUtils.loadAnimation(kiteContext, animation)!!
 }

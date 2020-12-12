@@ -13,11 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.cioccarellia.kite.resparser
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
+
+package com.cioccarellia.kite.fetchers.compat
+
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.IntRange
+import androidx.core.content.ContextCompat
+import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 
 /**
- * [KiteParser] which has precisely 1 input and 1 output
+ * [KiteColors] Implementation
  * */
-public abstract class KiteResParser<in R, out O> : KiteParser() {
-    public abstract operator fun get(resource: R): O
+internal class KiteColors : StandardKiteFetcher<@ColorRes Int, @ColorInt Int>() {
+    @ColorInt
+    override operator fun get(
+        @ColorRes @IntRange(from = 1) color: Int
+    ): Int = ContextCompat.getColor(kiteContext, color)
 }
