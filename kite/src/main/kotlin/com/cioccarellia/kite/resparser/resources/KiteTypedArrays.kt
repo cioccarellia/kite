@@ -25,7 +25,7 @@ import com.cioccarellia.kite.resparser.KiteResParser
 /**
  * KiteTypedArrays Implementation
  * */
-class KiteTypedArrays : KiteResParser<@ArrayRes Int, TypedArray>() {
+internal class KiteTypedArrays : KiteResParser<@ArrayRes Int, TypedArray>() {
     override operator fun get(
         @ArrayRes @IntRange(from = 1) typedArray: Int
     ): TypedArray = kiteContext.resources.obtainTypedArray(typedArray)

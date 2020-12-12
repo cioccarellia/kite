@@ -24,7 +24,7 @@ import com.cioccarellia.kite.resparser.KiteResParser
 /**
  * KiteStrings Implementation
  * */
-class KiteStrings : KiteResParser<@StringRes Int, String>() {
+internal class KiteStrings : KiteResParser<@StringRes Int, String>() {
     override operator fun get(
         @StringRes @IntRange(from = 1) string: Int
     ): String = kiteContext.getString(string)

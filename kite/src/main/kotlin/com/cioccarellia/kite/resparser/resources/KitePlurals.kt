@@ -24,7 +24,7 @@ import com.cioccarellia.kite.resparser.KiteCustomResParser
 /**
  * KitePlurals Implementation
  * */
-class KitePlurals : KiteCustomResParser<@PluralsRes Int, String>() {
+internal class KitePlurals : KiteCustomResParser<@PluralsRes Int, String>() {
     operator fun get(
         @PluralsRes @IntRange(from = 1) plurals: Int,
         quantity: Int

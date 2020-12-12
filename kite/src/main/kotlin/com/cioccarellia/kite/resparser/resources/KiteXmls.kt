@@ -25,7 +25,7 @@ import com.cioccarellia.kite.resparser.KiteResParser
 /**
  * KiteXmls Implementation
  * */
-class KiteXmls : KiteResParser<@XmlRes Int, XmlResourceParser>() {
+internal class KiteXmls : KiteResParser<@XmlRes Int, XmlResourceParser>() {
     override operator fun get(
         @XmlRes @IntRange(from = 1) xml: Int
     ): XmlResourceParser = kiteContext.resources.getXml(xml)

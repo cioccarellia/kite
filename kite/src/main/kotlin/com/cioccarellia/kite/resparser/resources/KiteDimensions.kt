@@ -24,7 +24,7 @@ import com.cioccarellia.kite.resparser.KiteResParser
 /**
  * KiteDimens Implementation
  * */
-class KiteDimensions : KiteResParser<@DimenRes Int, Float>() {
+internal class KiteDimensions : KiteResParser<@DimenRes Int, Float>() {
     override operator fun get(
         @DimenRes @IntRange(from = 1) dimension: Int
     ): Float = kiteContext.resources.getDimension(dimension)

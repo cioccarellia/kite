@@ -28,3 +28,12 @@ dependencies {
     testImplementation deps.test.mockito_core
     testImplementation deps.test.truth
 }
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        freeCompilerArgs += [
+                '-progressive',
+                '-Xexplicit-api=strict',
+        ]
+    }
+}

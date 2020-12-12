@@ -25,7 +25,7 @@ import com.cioccarellia.kite.resparser.KiteResParser
 /**
  * KiteLayouts Implementation
  * */
-class KiteLayouts : KiteResParser<@LayoutRes Int, XmlResourceParser>() {
+internal class KiteLayouts : KiteResParser<@LayoutRes Int, XmlResourceParser>() {
     override operator fun get(
         @LayoutRes @IntRange(from = 1) layout: Int
     ): XmlResourceParser = kiteContext.resources.getLayout(layout)

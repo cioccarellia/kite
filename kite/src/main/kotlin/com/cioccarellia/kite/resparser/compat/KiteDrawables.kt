@@ -29,7 +29,7 @@ import com.cioccarellia.kite.resparser.KiteResParser
 /**
  * KiteDrawables Implementation
  * */
-class KiteDrawables : KiteResParser<@DrawableRes Int, Drawable>() {
+internal class KiteDrawables : KiteResParser<@DrawableRes Int, Drawable>() {
     override operator fun get(
         @DrawableRes @IntRange(from = 1) drawable: Int
     ): Drawable = ContextCompat.getDrawable(kiteContext, drawable)!!
