@@ -19,7 +19,7 @@
 ## TLDR
 Fed up with typing `ContextCompact`, `resources` and `context` all over your apps to access your resources? Say no more.
 ```gradle
-implementation 'com.cioccarellia:kite:1.1.0'
+implementation 'com.cioccarellia:kite:1.1.1'
 ```
 
 - :kite: Access all app resources with one unified syntax.
@@ -29,12 +29,18 @@ implementation 'com.cioccarellia:kite:1.1.0'
 - :zap: Easy to implement in existing apps.
 - :heart: Kotlin powered, 100%.
 
+
+```kotlin
+val text = Kite.string[R.string.welcome_back]
+```
+
 ## Usage
-Initialize kite (ideally inside your `Application` class) and pass to it the application context.
+Kite is a handy and lightweight android library which aims at reducing redundancy and code duplication, and greatly improving readability.
+It encloses and simplifies resource access within the Kite domain, and abstracts away the implementation logic needed to fetch the desired value, making interactions with the android framework smooth and frictionless.
+To get started initialize kite (ideally inside your `Application` class) and pass to it the application context.
 
 ```kotlin
 class App : Application() {
-
     override fun onCreate() {
         super.onCreate()
         Kite.fly(this)
@@ -42,30 +48,50 @@ class App : Application() {
 }
 ```
 
-You're all set. Import the `Kite` object, select what you want to use and access it with the bracket notation `[]`.
+You're all set. You can now the `Kite` object, select what kind of resource you want to access and fetch it using the bracket notation `[]`.
 
+Beware: kite can not and **will not** save you from the mess that dealing with Android `Context` is.
+After all, kite is some cleverly placed syntactic sugar over those same android methods you are used to: kite itself holds a reference to `Context`.
+It will, however, unify and thoroughly improve your experience with dealing with all android related resource extraction operations.
+It may also save you from typing again `ContextCompact` in your life. That's the precise reason it was created. I'm not kidding.
+
+
+## Samples
 ```kotlin
-// Kite
+// 🪁 Kite
 fab.rippleColor =         Kite.color[R.color.md_light_lime]
 fab.backgroundTintList =  Kite.colorStateList[R.color.md_lime]
-fab.text =                Kite.string[R.string.ride]
+fab.text =                Kite.string[R.string.unread_notifications, "69"]
+fab.isVisible =           Kite.bools[R.bool.show_fab]
 
 // Standard
-fab.rippleColor =         ContextCompact.getColor(appContext, R.color.md_light_lime)
+fab.rippleColor =         ContextCompact.getColor(context, R.color.md_light_lime)
 fab.backgroundTintList =  ColorStateList.valueOf(R.color.md_lime)
-fab.text =                appContext.getString(R.string.ride)
+fab.text =                appContext.getString(R.string.unread_notifications, "69")
+fab.isVisible =           resources.getBoolean(R.bool.show_fab)
 ```
 
-## Extensions
-You can run a bunch of extensions functions with regards to context:
-- `getKiteContext` returns the current kite context
-- `changeKiteContext` changes the current kite context to the passed one
-- `KiteParser.changeContext` allows you to modify kite's context, chainable
-- `KiteParser.runWith` allows you to temporarely switch context and execute a lambda with respect to the passed context, chainable
-
+## Context Switching
+One clear disadvantage to using kite with respect to doing things the old way is choosing which context to use.
+That's why Kite comes packed with extension functions to permanently change / temporarily switch the in-use context, so that you have full control over which context is used to do what.
+- `changeContext` can be invoked on `Kite` and on any `KiteFetcher`, it is chainable and it permanently changes the context reference kite holds.
+```kotlin
+Kite.changeContext(this)
+Kite.integer.changeContext(this)[R.integer.threads]
+```
+- `runWith` can be invoked on any `KiteFetcher`, it is chainable and it temporarily runs the passed lambda in the desired context.
+```kotlin
+Kite.color.runWith(this) { color ->
+    button.setBackground(
+        color[R.color.colorAccent]
+    )
+}
+```
 
 ## Supported Resources
-| Resource Type   	| AAPT class       	| Namespace             	| Input                                                   	| Output              	| Implementation                      	| API 	| Variants           	|
+Kite delegates resource collection to `KiteFetcher`s. Those classes contain a well defined implementation of the actual process of converting the given `id` to the output type.
+
+| Resource Type   	| AAPT class       	| Fetcher                	| Input                                                   	| Output              	| Implementation                      	| API 	| Variants           	|
 |-----------------	|------------------	|-----------------------	|---------------------------------------------------------	|---------------------	|-------------------------------------	|-----	|--------------------	|
 | Strings         	| `R.string`       	| `Kite.string`         	| `@StringRes string: Int`                                	| `String`            	| `Context.getString()`               	| /   	| `formatArgs`       	|
 | Plurals         	| `R.plurals`      	| `Kite.plural`         	| `@PluralRes plural: Int`, `quantity: Int`               	| `String`            	| `Resources.getQuantityString()`     	| /   	| `formatArgs`       	|
@@ -90,3 +116,7 @@ You can run a bunch of extensions functions with regards to context:
 
 ## :stop_sign: Known Issues
 - Annotation checks over resource parameters (functions which take as argument some annotated value, like `@ColorRes`, `@StringRes`) are not extensively performed by Android Studio, when using kotlin operator functions: I created a bug report at google issue tracker [here](https://issuetracker.google.com/issues/173628041). Hope to see it fixed soon.
+
+## Kite Puns
+- A kite usually comes with different *colors*
+- A kite is flown and controlled with *strings*

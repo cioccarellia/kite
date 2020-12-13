@@ -24,12 +24,12 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteStrings] Implementation
  * */
-internal class KiteStrings : StandardKiteFetcher<@StringRes Int, String>() {
+public class KiteStrings : StandardKiteFetcher<@StringRes Int, String>() {
     override operator fun get(
         @StringRes @IntRange(from = 1) string: Int
     ): String = kiteContext.getString(string)
 
-    operator fun get(
+    public operator fun get(
         @StringRes @IntRange(from = 1) string: Int,
         vararg formatArguments: Any
     ): String = kiteContext.getString(string, *formatArguments)

@@ -26,7 +26,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteInterpolators] Implementation
  * */
-internal class KiteInterpolators : StandardKiteFetcher<@InterpolatorRes Int, Interpolator>() {
+public class KiteInterpolators : StandardKiteFetcher<@InterpolatorRes Int, Interpolator>() {
     override operator fun get(
         @InterpolatorRes @IntRange(from = 1) animation: Int
     ): Interpolator = AnimationUtils.loadInterpolator(kiteContext, animation)!!

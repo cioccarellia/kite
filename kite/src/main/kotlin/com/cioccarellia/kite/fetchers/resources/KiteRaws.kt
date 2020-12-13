@@ -26,12 +26,12 @@ import java.io.InputStream
 /**
  * [KiteRaws] Implementation
  * */
-internal class KiteRaws : StandardKiteFetcher<@RawRes Int, InputStream>() {
+public class KiteRaws : StandardKiteFetcher<@RawRes Int, InputStream>() {
     override operator fun get(
         @RawRes @IntRange(from = 1) raw: Int
     ): InputStream = kiteContext.resources.openRawResource(raw)
 
-    operator fun get(
+    public operator fun get(
         @RawRes raw: Int,
         value: TypedValue
     ): InputStream = kiteContext.resources.openRawResource(raw, value)

@@ -24,13 +24,13 @@ import com.cioccarellia.kite.fetchers.CustomKiteFetcher
 /**
  * [KitePlurals] Implementation
  * */
-internal class KitePlurals : CustomKiteFetcher<@PluralsRes Int, String>() {
-    operator fun get(
+public class KitePlurals : CustomKiteFetcher<@PluralsRes Int, String>() {
+    public operator fun get(
         @PluralsRes @IntRange(from = 1) plurals: Int,
         quantity: Int
     ): String = kiteContext.resources.getQuantityString(plurals, quantity)
 
-    operator fun get(
+    public operator fun get(
         @PluralsRes @IntRange(from = 1) plurals: Int,
         quantity: Int,
         vararg formatArgs: String

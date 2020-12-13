@@ -22,8 +22,8 @@ import com.cioccarellia.kite.fetchers.CustomKiteFetcher
 /**
  * [KiteIdentifier] Implementation
  * */
-internal class KiteIdentifier : CustomKiteFetcher<String, Int>() {
-    operator fun get(
+public class KiteIdentifier : CustomKiteFetcher<String, Int>() {
+    public operator fun get(
         name: String,
         defType: String,
         defPackage: String

@@ -25,7 +25,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteLayouts] Implementation
  * */
-internal class KiteLayouts : StandardKiteFetcher<@LayoutRes Int, XmlResourceParser>() {
+public class KiteLayouts : StandardKiteFetcher<@LayoutRes Int, XmlResourceParser>() {
     override operator fun get(
         @LayoutRes @IntRange(from = 1) layout: Int
     ): XmlResourceParser = kiteContext.resources.getLayout(layout)

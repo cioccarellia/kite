@@ -24,7 +24,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteStringArrays] Implementation
  * */
-internal class KiteStringArrays : StandardKiteFetcher<@ArrayRes Int, Array<out String>>() {
+public class KiteStringArrays : StandardKiteFetcher<@ArrayRes Int, Array<out String>>() {
     override operator fun get(
         @ArrayRes @IntRange(from = 1) stringArray: Int
     ): Array<out String> = kiteContext.resources.getStringArray(stringArray)

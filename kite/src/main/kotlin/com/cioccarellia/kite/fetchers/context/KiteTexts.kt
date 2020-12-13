@@ -24,7 +24,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteTexts] Implementation
  * */
-internal class KiteTexts : StandardKiteFetcher<@StringRes Int, CharSequence>() {
+public class KiteTexts : StandardKiteFetcher<@StringRes Int, CharSequence>() {
     override operator fun get(
         @StringRes @IntRange(from = 1) text: Int
     ): CharSequence = kiteContext.getText(text)

@@ -20,10 +20,11 @@ import android.content.Context
 import com.cioccarellia.kite.Kite
 import com.cioccarellia.kite.fetchers.KiteFetcher
 
-internal inline fun KiteFetcher.switchContext(
+@PublishedApi
+internal inline fun <T : KiteFetcher> T.switchContext(
     targetContext: Context,
-    lambda: (KiteFetcher) -> Unit
-): KiteFetcher = apply {
+    lambda: (T) -> Unit
+): T = apply {
     val initialContext = Kite.context
     Kite.context = targetContext
     lambda(this)

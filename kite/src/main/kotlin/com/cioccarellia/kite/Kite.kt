@@ -47,132 +47,140 @@ public object Kite {
     /**
      * [Context] used by default to fetch resources
      * */
-    public lateinit var context: Context
+    @PublishedApi
+    internal lateinit var context: Context
 
+    /**
+     * Used to switch kite [Context]
+     * */
+    public fun changeContext(
+        updatedContext: Context
+    ): Kite = apply {
+        context = updatedContext
+    }
 
     /**
      * Fetches [String]s from resources.
      * [Context.getString()] is used to resolve the id.
      * There is also a vararg variant which accepts format arguments, and maps to the appropriate [Context.getString()] function.
      * */
-    public val string: StandardKiteFetcher<Int, String> by lazy { KiteStrings() }
+    public val string: KiteStrings by lazy { KiteStrings() }
 
     /**
      * Fetches [String]s Plurals from resources, given the [String] id and the [Int] quantity.
      * [Resources.getQuantityString()] is used to resolve the id.
      * There is also a vararg variant which accepts format arguments, and maps to the appropriate [Resources.getQuantityString()] function.
      * */
-    public val plural: CustomKiteFetcher<Int, String> by lazy { KitePlurals() }
+    public val plural: KitePlurals by lazy { KitePlurals() }
 
     /**
      * Fetches [CharSequence] Texts from resources.
      * [Context.getText()] is used to resolve the id.
      * */
-    public val text: StandardKiteFetcher<Int, CharSequence> by lazy { KiteTexts() }
+    public val text: KiteTexts by lazy { KiteTexts() }
 
     /**
      * Fetches color [Int]s from resources.
      * [ContextCompat.getColor()] is used to resolve the id.
      * */
-    public val color: StandardKiteFetcher<Int, Int> by lazy { KiteColors() }
-
+    public val color: KiteColors by lazy { KiteColors() }
 
     /**
      * Fetches [ColorStateList]s from resources.
      * [ContextCompat.getColorStateList()] is used to resolve the id.
      * */
-    public val colorStateList: StandardKiteFetcher<Int, ColorStateList> by lazy { KiteColorStateLists() }
+    public val colorStateList: KiteColorStateLists by lazy { KiteColorStateLists() }
 
     /**
      * Fetches [Boolean]s from resources.
      * [Resources.getBoolean()] is used to resolve the id.
      * */
-    public val bools: StandardKiteFetcher<Int, Boolean> by lazy { KiteBools() }
+    public val bools: KiteBools by lazy { KiteBools() }
 
     /**
      * Fetches ID [Int]s from resources, given the definition type and package.
      * [Resources.getIdentifier()] is used to resolve the id.
      * */
-    public val identifier: CustomKiteFetcher<String, Int> by lazy { KiteIdentifier() }
+    public val identifier: KiteIdentifier by lazy { KiteIdentifier() }
 
     /**
      * Fetches [Drawable]s from resources.
      * [ContextCompat.getDrawable()] is used to resolve the id.
      * There is also a variant which accepts a [Resources.Theme?] arguments, and maps to the [Resources.getDrawable()] function.
      * */
-    public val drawable: StandardKiteFetcher<Int, Drawable> by lazy { KiteDrawables() }
+    public val drawable: KiteDrawables by lazy { KiteDrawables() }
 
     /**
      * Fetches [Animation]s from resources.
      * [AnimationUtils.loadAnimation()] is used to resolve the id.
      * */
-    public val animation: StandardKiteFetcher<Int, Animation> by lazy { KiteAnimations() }
+    public val animation: KiteAnimations by lazy { KiteAnimations() }
 
     /**
      * Fetches [Interpolator]s from resources.
      * [AnimationUtils.loadInterpolator()] is used to resolve the id.
      * */
-    public val interpolator: StandardKiteFetcher<Int, Interpolator> by lazy { KiteInterpolators() }
+    public val interpolator: KiteInterpolators by lazy { KiteInterpolators() }
 
     /**
      * Fetches [IntArray]s from resources.
      * [Resources.getIntArray()] is used to resolve the id.
      * */
-    public val intArray: StandardKiteFetcher<Int, IntArray> by lazy { KiteIntArrays() }
+    public val intArray: KiteIntArrays by lazy { KiteIntArrays() }
 
     /**
      * Fetches String Arrays ([Array<String>]) from resources.
      * [Resources.getStringArray()] is used to resolve the id.
      * */
-    public val stringArray: StandardKiteFetcher<Int, Array<out String>> by lazy { KiteStringArrays() }
+    public val stringArray: KiteStringArrays by lazy { KiteStringArrays() }
 
     /**
      * Fetches [TypedArray]s from resources.
      * [Resources.obtainTypedArray()] is used to resolve the id.
      * */
-    public val typedArray: StandardKiteFetcher<Int, TypedArray> by lazy { KiteTypedArrays() }
+    public val typedArray: KiteTypedArrays by lazy { KiteTypedArrays() }
 
     /**
      * Fetches Dimension [Float]s from resources.
      * [Resources.getDimension()] is used to resolve the id.
      * */
-    public val dimension: StandardKiteFetcher<Int, Float> by lazy { KiteDimensions() }
+    public val dimension: KiteDimensions by lazy { KiteDimensions() }
 
     /**
      * Fetches [Int]s from resources.
      * [Resources.getInteger()] is used to resolve the id.
      * */
-    public val integer: StandardKiteFetcher<Int, Int> by lazy { KiteIntegers() }
+    public val integer: KiteIntegers by lazy { KiteIntegers() }
 
     /**
      * Fetches fractions [Float]s from resources, given the value base and the parent value base.
      * [Resources.getFraction()] is used to resolve the id.
      * */
-    public val fraction: CustomKiteFetcher<Int, Float> by lazy { KiteFraction() }
+    public val fraction: KiteFraction by lazy { KiteFraction() }
 
     /**
      * Fetches Layout [XmlResourceParser]s from resources.
      * [Resources.getLayout()] is used to resolve the id.
      * */
-    public val layout: StandardKiteFetcher<Int, XmlResourceParser> by lazy { KiteLayouts() }
+    public val layout: KiteLayouts by lazy { KiteLayouts() }
 
     /**
      * Fetches [InputStream]s from resources.
      * [Resources.openRawResource()] is used to resolve the id.
      * There is also a parameterized variant which accepts a [TypedValue], which maps to the appropriate [Resources.openRawResource()] function.
      * */
-    public val raw: StandardKiteFetcher<Int, InputStream> by lazy { KiteRaws() }
+    public val raw: KiteRaws by lazy { KiteRaws() }
 
     /**
      * Fetches Layout [XmlResourceParser]s from resources.
      * [Resources.getXml()] is used to resolve the id.
      * */
-    public val xml: StandardKiteFetcher<Int, XmlResourceParser> by lazy { KiteXmls() }
+    public val xml: KiteXmls by lazy { KiteXmls() }
 
     /**
      * Requires API 26 (O)
      * Fetches Layout [Typeface]s from resources.
      * [Resources.getFont()] is used to resolve the id.
      * */
-    public val font: StandardKiteFetcher<Int, Typeface> by lazy { KiteFonts() }
+    public val font: KiteFonts by lazy { KiteFonts() }
 }

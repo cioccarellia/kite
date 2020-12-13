@@ -25,7 +25,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteXmls] Implementation
  * */
-internal class KiteXmls : StandardKiteFetcher<@XmlRes Int, XmlResourceParser>() {
+public class KiteXmls : StandardKiteFetcher<@XmlRes Int, XmlResourceParser>() {
     override operator fun get(
         @XmlRes @IntRange(from = 1) xml: Int
     ): XmlResourceParser = kiteContext.resources.getXml(xml)

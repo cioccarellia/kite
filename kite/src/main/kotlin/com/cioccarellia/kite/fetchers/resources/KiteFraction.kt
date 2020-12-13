@@ -24,8 +24,8 @@ import com.cioccarellia.kite.fetchers.CustomKiteFetcher
 /**
  * [KiteFraction] Implementation
  * */
-internal class KiteFraction : CustomKiteFetcher<@FractionRes Int, Float>() {
-    operator fun get(
+public class KiteFraction : CustomKiteFetcher<@FractionRes Int, Float>() {
+    public operator fun get(
         @FractionRes @IntRange(from = 1) fraction: Int,
         @IntRange(from = 2) base: Int,
         @IntRange(from = 2) pbase: Int

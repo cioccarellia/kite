@@ -30,12 +30,14 @@ public abstract class KiteFetcher {
         get() {
             return Kite.context
         }
-
-    /**
-     * Temporarily switches context to execute the given lambda
-     *
-     * @param [context]     The context to be temporarily set as the new kite context while the lambda runs
-     * @param [block]       The lambda to be executed
-     * */
-    public fun runWith(context: Context, block: (KiteFetcher) -> Unit): KiteFetcher = switchContext(context, block)
 }
+
+/**
+ * Temporarily switches context to execute the given lambda
+ *
+ * @param [context]     The context to be temporarily set as the new kite context while the lambda runs
+ * @param [block]       The lambda to be executed
+ * */
+public inline fun <T : KiteFetcher> T.runWith(context: Context, block: (T) -> Unit): T = switchContext(context, block)
+
+public fun <T : KiteFetcher> T.changeContext(context: Context): T = apply { Kite.changeContext(context) }

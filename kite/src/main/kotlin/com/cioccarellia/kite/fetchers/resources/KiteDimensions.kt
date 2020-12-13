@@ -24,7 +24,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteDimens] Implementation
  * */
-internal class KiteDimensions : StandardKiteFetcher<@DimenRes Int, Float>() {
+public class KiteDimensions : StandardKiteFetcher<@DimenRes Int, Float>() {
     override operator fun get(
         @DimenRes @IntRange(from = 1) dimension: Int
     ): Float = kiteContext.resources.getDimension(dimension)
