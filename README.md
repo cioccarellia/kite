@@ -115,7 +115,7 @@ Kite delegates resource collection to `KiteFetcher`s. Those classes contain a we
 | Xmls            	| `R.xml`          	| `Kite.xml`            	| `@XmlRes xml: Int`                                      	| `XmlResourceParser` 	| `Resources.getXml()`                	| /   	| /                  	|
 | Raws            	| `R.raw`          	| `Kite.raw`            	| `@RawRes raw: Int`                                      	| `InputStream`       	| `Resources.openRawResource()`       	| /   	| `TypedValue`       	|
 
-## :stop_sign: Known Issues
+## :warning: Known Issues
 - Annotation checks over resource parameters (functions which take as argument some annotated value, like `@ColorRes`, `@StringRes`) are not extensively performed by Android Studio, when using kotlin operator functions: I created a bug report at google issue tracker [here](https://issuetracker.google.com/issues/173628041). Hope to see it fixed soon.
 
 ## Kite Puns
