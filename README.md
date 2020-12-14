@@ -35,7 +35,7 @@ val text = Kite.string[R.string.welcome_back]
 ```
 
 ## Usage
-Kite is a handy and lightweight android library which aims at reducing redundancy and code duplication, and greatly improving readability.
+Kite is a handy and lightweight android library which aims at reducing redundancy and decreasing android code complexity.
 It encloses and simplifies resource access within the Kite domain, and abstracts away the implementation logic needed to fetch the desired value, making interactions with the android framework smooth and frictionless.
 To get started initialize kite (ideally inside your `Application` class) and pass to it the application context.
 
@@ -48,12 +48,12 @@ class App : Application() {
 }
 ```
 
-You're all set. You can now the `Kite` object, select what kind of resource you want to access and fetch it using the bracket notation `[]`.
+You're all set. You can now import the `Kite` object, select whichever resource category you want to access and fetch it using the resource id and the bracket notation `[]`.
 
-Beware: kite can not and **will not** save you from the mess that dealing with Android `Context` is.
+Beware: kite can not and **will not** save you from the mess that is dealing with Android `Context`.
 After all, kite is some cleverly placed syntactic sugar over those same android methods you are used to: kite itself holds a reference to `Context`.
-It will, however, unify and thoroughly improve your experience with dealing with all android related resource extraction operations.
-It may also save you from typing again `ContextCompact` in your life. That's the precise reason it was created. I'm not kidding.
+It will, however, unify and thoroughly uniform your experience with dealing with all android related resource extraction operations, which can turn to be extremely practical.
+It may also save you from typing again `ContextCompact` in your life. That's the precise reason kite was created. I'm not kidding.
 
 
 ## Samples
@@ -73,12 +73,13 @@ fab.isVisible =           resources.getBoolean(R.bool.show_fab)
 
 ## Context Switching
 One clear disadvantage to using kite with respect to doing things the old way is choosing which context to use.
-That's why Kite comes packed with extension functions to permanently change / temporarily switch the in-use context, so that you have full control over which context is used to do what.
+That's why Kite comes packed with extension functions for permanent change / temporary switch the in-use context, so that you have full control over which context is used to do what.
 - `changeContext` can be invoked on `Kite` and on any `KiteFetcher`, it is chainable and it permanently changes the context reference kite holds.
 ```kotlin
 Kite.changeContext(this)
 Kite.integer.changeContext(this)[R.integer.threads]
 ```
+
 - `runWith` can be invoked on any `KiteFetcher`, it is chainable and it temporarily runs the passed lambda in the desired context.
 ```kotlin
 Kite.color.runWith(this) { color ->
@@ -114,7 +115,7 @@ Kite delegates resource collection to `KiteFetcher`s. Those classes contain a we
 | Xmls            	| `R.xml`          	| `Kite.xml`            	| `@XmlRes xml: Int`                                      	| `XmlResourceParser` 	| `Resources.getXml()`                	| /   	| /                  	|
 | Raws            	| `R.raw`          	| `Kite.raw`            	| `@RawRes raw: Int`                                      	| `InputStream`       	| `Resources.openRawResource()`       	| /   	| `TypedValue`       	|
 
-## :stop_sign: Known Issues
+## :warning: Known Issues
 - Annotation checks over resource parameters (functions which take as argument some annotated value, like `@ColorRes`, `@StringRes`) are not extensively performed by Android Studio, when using kotlin operator functions: I created a bug report at google issue tracker [here](https://issuetracker.google.com/issues/173628041). Hope to see it fixed soon.
 
 ## Kite Puns
