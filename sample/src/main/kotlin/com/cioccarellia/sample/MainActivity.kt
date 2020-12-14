@@ -44,6 +44,5 @@ class MainActivity : AppCompatActivity() {
                 color[R.color.colorAccent]
             )
         }
-
     }
 }

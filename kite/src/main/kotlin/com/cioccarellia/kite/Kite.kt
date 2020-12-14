@@ -38,7 +38,9 @@ import java.io.InputStream
 
 public object Kite {
     /**
-     * Initializes Kite and sets the current Kite context
+     * Initializes Kite and sets the current Kite [Context]
+     *
+     * @param context The [Context] kite is initialized with
      * */
     public fun fly(context: Context) {
         this.context = context
@@ -51,7 +53,10 @@ public object Kite {
     internal lateinit var context: Context
 
     /**
-     * Used to switch kite [Context]
+     * Used to switch kite [Context].
+     *
+     * @param updatedContext    The [Context] to be set as the new kite [context]
+     * @return [Kite]           The kite instance
      * */
     public fun changeContext(
         updatedContext: Context
@@ -63,6 +68,7 @@ public object Kite {
      * Fetches [String]s from resources.
      * [Context.getString()] is used to resolve the id.
      * There is also a vararg variant which accepts format arguments, and maps to the appropriate [Context.getString()] function.
+     * @return [KiteStrings]
      * */
     public val string: KiteStrings by lazy { KiteStrings() }
 
@@ -70,36 +76,42 @@ public object Kite {
      * Fetches [String]s Plurals from resources, given the [String] id and the [Int] quantity.
      * [Resources.getQuantityString()] is used to resolve the id.
      * There is also a vararg variant which accepts format arguments, and maps to the appropriate [Resources.getQuantityString()] function.
+     * @return [KitePlurals]
      * */
     public val plural: KitePlurals by lazy { KitePlurals() }
 
     /**
      * Fetches [CharSequence] Texts from resources.
      * [Context.getText()] is used to resolve the id.
+     * @return [KiteTexts]
      * */
     public val text: KiteTexts by lazy { KiteTexts() }
 
     /**
      * Fetches color [Int]s from resources.
      * [ContextCompat.getColor()] is used to resolve the id.
+     * @return [KiteColors]
      * */
     public val color: KiteColors by lazy { KiteColors() }
 
     /**
      * Fetches [ColorStateList]s from resources.
      * [ContextCompat.getColorStateList()] is used to resolve the id.
+     * @return [KiteColorStateLists]
      * */
     public val colorStateList: KiteColorStateLists by lazy { KiteColorStateLists() }
 
     /**
      * Fetches [Boolean]s from resources.
      * [Resources.getBoolean()] is used to resolve the id.
+     * @return [KiteBools]
      * */
     public val bools: KiteBools by lazy { KiteBools() }
 
     /**
      * Fetches ID [Int]s from resources, given the definition type and package.
      * [Resources.getIdentifier()] is used to resolve the id.
+     * @return [KiteIdentifier]
      * */
     public val identifier: KiteIdentifier by lazy { KiteIdentifier() }
 
@@ -107,60 +119,70 @@ public object Kite {
      * Fetches [Drawable]s from resources.
      * [ContextCompat.getDrawable()] is used to resolve the id.
      * There is also a variant which accepts a [Resources.Theme?] arguments, and maps to the [Resources.getDrawable()] function.
+     * @return [KiteDrawables]
      * */
     public val drawable: KiteDrawables by lazy { KiteDrawables() }
 
     /**
      * Fetches [Animation]s from resources.
      * [AnimationUtils.loadAnimation()] is used to resolve the id.
+     * @return [KiteAnimations]
      * */
     public val animation: KiteAnimations by lazy { KiteAnimations() }
 
     /**
      * Fetches [Interpolator]s from resources.
      * [AnimationUtils.loadInterpolator()] is used to resolve the id.
+     * @return [KiteInterpolators]
      * */
     public val interpolator: KiteInterpolators by lazy { KiteInterpolators() }
 
     /**
      * Fetches [IntArray]s from resources.
      * [Resources.getIntArray()] is used to resolve the id.
+     * @return [KiteIntArrays]
      * */
     public val intArray: KiteIntArrays by lazy { KiteIntArrays() }
 
     /**
      * Fetches String Arrays ([Array<String>]) from resources.
      * [Resources.getStringArray()] is used to resolve the id.
+     * @return [KiteStrings]
      * */
     public val stringArray: KiteStringArrays by lazy { KiteStringArrays() }
 
     /**
      * Fetches [TypedArray]s from resources.
      * [Resources.obtainTypedArray()] is used to resolve the id.
+     * @return [KiteTypedArrays]
      * */
     public val typedArray: KiteTypedArrays by lazy { KiteTypedArrays() }
 
     /**
      * Fetches Dimension [Float]s from resources.
      * [Resources.getDimension()] is used to resolve the id.
+     * @return [KiteDimensions]
      * */
     public val dimension: KiteDimensions by lazy { KiteDimensions() }
 
     /**
      * Fetches [Int]s from resources.
      * [Resources.getInteger()] is used to resolve the id.
+     * @return [KiteIntegers]
      * */
     public val integer: KiteIntegers by lazy { KiteIntegers() }
 
     /**
      * Fetches fractions [Float]s from resources, given the value base and the parent value base.
      * [Resources.getFraction()] is used to resolve the id.
+     * @return [KiteFraction]
      * */
     public val fraction: KiteFraction by lazy { KiteFraction() }
 
     /**
      * Fetches Layout [XmlResourceParser]s from resources.
      * [Resources.getLayout()] is used to resolve the id.
+     * @return [KiteLayouts]
      * */
     public val layout: KiteLayouts by lazy { KiteLayouts() }
 
@@ -168,12 +190,14 @@ public object Kite {
      * Fetches [InputStream]s from resources.
      * [Resources.openRawResource()] is used to resolve the id.
      * There is also a parameterized variant which accepts a [TypedValue], which maps to the appropriate [Resources.openRawResource()] function.
+     * @return [KiteRaws]
      * */
     public val raw: KiteRaws by lazy { KiteRaws() }
 
     /**
      * Fetches Layout [XmlResourceParser]s from resources.
      * [Resources.getXml()] is used to resolve the id.
+     * @return [KiteXmls]
      * */
     public val xml: KiteXmls by lazy { KiteXmls() }
 
@@ -181,6 +205,7 @@ public object Kite {
      * Requires API 26 (O)
      * Fetches Layout [Typeface]s from resources.
      * [Resources.getFont()] is used to resolve the id.
+     * @return [KiteFonts]
      * */
     public val font: KiteFonts by lazy { KiteFonts() }
 }

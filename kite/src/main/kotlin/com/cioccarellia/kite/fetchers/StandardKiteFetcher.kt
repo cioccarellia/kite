@@ -20,5 +20,9 @@ package com.cioccarellia.kite.fetchers
  * It compatible and backed by the index operator with a canonical signature.
  * */
 public abstract class StandardKiteFetcher<in R, out O> : KiteFetcher() {
+    /**
+     * @param resource The resource identifier [R]
+     * @return [O] The fetched resource [O]
+     * */
     public abstract operator fun get(resource: R): O
 }
