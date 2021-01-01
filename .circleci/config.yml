@@ -9,7 +9,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Chmod permissions"
+          name: "Image Information"
+          command: printf "\nKernel:\n " && uname -a && printf "\n\nMemory:\n " && free -h && printf "\n\nStorage:\n" && df -h
+      - run:
+          name: "Chmod Permissions"
           command: sudo chmod +x ./gradlew
       - run:
           name: "Download Dependencies"
