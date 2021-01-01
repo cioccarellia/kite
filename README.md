@@ -18,9 +18,27 @@
 
 ## TLDR
 Fed up with typing `ContextCompact`, `resources` and `context` all over your apps to access your resources? Say no more.
+
+<details open><summary>Gradle</summary>
+
 ```gradle
-implementation 'com.cioccarellia:kite:1.1.1'
+dependencies {
+    implementation 'com.cioccarellia:kite:1.1.1'
+}
 ```
+</details>
+
+<details><summary>Maven</summary>
+
+```xml
+<dependency>
+    <groupId>com.cioccarellia</groupId>
+    <artifactId>kote</artifactId>
+    <version>1.1.1</version>
+    <type>pom</type>
+</dependency>
+```
+</details>
 
 - :kite: Access all app resources with one unified syntax.
 - :dna: Null safe layer between the Android framework java code and your app.
