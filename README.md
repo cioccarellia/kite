@@ -17,7 +17,7 @@
 </p>
 
 ## TLDR
-Fed up with typing `ContextCompact`, `resources` and `context` all over your apps to access your resources? Say no more.
+Fed up with typing `ContextCompat`, `resources` and `context` all over your apps to access your resources? Say no more.
 
 <details open><summary>Gradle</summary>
 
@@ -71,7 +71,7 @@ You're all set. You can now import the `Kite` object, select whichever resource 
 Beware: kite can not and **will not** save you from the mess that is dealing with Android `Context`.
 After all, kite is some cleverly placed syntactic sugar over those same android methods you are used to: kite itself holds a reference to `Context`.
 It will, however, unify and thoroughly uniform your experience with dealing with all android related resource extraction operations, which can turn to be extremely practical.
-It may also save you from typing again `ContextCompact` in your life. That's the precise reason kite was created. I'm not kidding.
+It may also save you from typing again `ContextCompat` in your life. That's the precise reason kite was created. I'm not kidding.
 
 
 ## Samples
@@ -83,7 +83,7 @@ fab.text =                Kite.string[R.string.unread_notifications, "69"]
 fab.isVisible =           Kite.bools[R.bool.show_fab]
 
 // Standard
-fab.rippleColor =         ContextCompact.getColor(context, R.color.md_light_lime)
+fab.rippleColor =         ContextCompat.getColor(context, R.color.md_light_lime)
 fab.backgroundTintList =  ColorStateList.valueOf(R.color.md_lime)
 fab.text =                appContext.getString(R.string.unread_notifications, "69")
 fab.isVisible =           resources.getBoolean(R.bool.show_fab)
