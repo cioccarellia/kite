@@ -4,7 +4,7 @@
 <h1 align="center">Kite</h1>
 <p align="center">Android Resource Wrapper Library.</p>
 <p align="center">
-  <a href="https://bintray.com/cioccarellia/maven/kite/_latestVersion"><img src="https://api.bintray.com/packages/cioccarellia/maven/kite/images/download.svg" alt="Download from Bintray"></a>
+  <a href="https://search.maven.org/artifact/com.github.cioccarellia/kite"><img src="https://maven-badges.herokuapp.com/maven-central/com.github.cioccarellia/kite/badge.svg" alt="Download from MavenCentral"></a>
   <a href="https://android-arsenal.com/details/1/8194"><img src="https://img.shields.io/badge/Android%20Arsenal-kite-brightgreen.svg?style=flat" alt="Android Arsenal"></a>
   <a href="https://github.com/cioccarellia/kite/actions?query=workflow%3A%22Android+CI%22"><img src="https://github.com/cioccarellia/kite/workflows/Android%20CI/badge.svg" alt="Bintray Github Action" /></a>
   <a href="https://github.com/cioccarellia/kite/actions?query=workflow%3A%22Bintray+Release%22"><img src="https://github.com/cioccarellia/kite/workflows/Bintray%20Release/badge.svg" alt="Bintray Github Action" /></a>
@@ -23,7 +23,7 @@ Fed up with typing `ContextCompat`, `resources` and `context` all over your apps
 
 ```gradle
 dependencies {
-    implementation 'com.cioccarellia:kite:1.1.1'
+    implementation 'com.github.cioccarellia:kite:1.1.2'
 }
 ```
 </details>
@@ -32,9 +32,9 @@ dependencies {
 
 ```xml
 <dependency>
-    <groupId>com.cioccarellia</groupId>
+    <groupId>com.github.cioccarellia</groupId>
     <artifactId>kote</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <type>pom</type>
 </dependency>
 ```
