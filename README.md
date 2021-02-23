@@ -4,7 +4,7 @@
 <h1 align="center">Kite</h1>
 <p align="center">Android Resource Wrapper Library.</p>
 <p align="center">
-  <a href="https://search.maven.org/artifact/com.github.cioccarellia/kite"><img src="https://maven-badges.herokuapp.com/maven-central/com.github.cioccarellia/kite/badge.svg" alt="Download from MavenCentral"></a>
+  <a href="https://search.maven.org/artifact/com.github.cioccarellia/kite"><img src="https://img.shields.io/maven-central/v/com.github.cioccarellia/kite.svg?label=Maven%20Central" alt="Download from MavenCentral"></a>
   <a href="https://android-arsenal.com/details/1/8194"><img src="https://img.shields.io/badge/Android%20Arsenal-kite-brightgreen.svg?style=flat" alt="Android Arsenal"></a>
   <a href="https://github.com/cioccarellia/kite/actions?query=workflow%3A%22Android+CI%22"><img src="https://github.com/cioccarellia/kite/workflows/Android%20CI/badge.svg" alt="Bintray Github Action" /></a>
   <a href="https://github.com/cioccarellia/kite/actions?query=workflow%3A%22Bintray+Release%22"><img src="https://github.com/cioccarellia/kite/workflows/Bintray%20Release/badge.svg" alt="Bintray Github Action" /></a>
