@@ -66,7 +66,7 @@ publishing {
                 licenses {
                     license {
                         name = 'APACHE LICENSE'
-                        url = 'https://github.com/cioccarellia/android-library-template/blob/master/LICENSE.md'
+                        url = 'https://github.com/cioccarellia/kite/blob/master/LICENSE.md'
                     }
                 }
                 developers {
@@ -77,9 +77,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = 'scm:git:github.com/cioccarellia/android-library-template.git'
-                    developerConnection = 'scm:git:ssh://github.com/cioccarellia/android-library-template.git'
-                    url = 'https://github.com/cioccarellia/android-library-template/tree/main'
+                    connection = 'scm:git:github.com/cioccarellia/kite.git'
+                    developerConnection = 'scm:git:ssh://github.com/cioccarellia/kite.git'
+                    url = 'https://github.com/cioccarellia/kite/tree/main'
                 }
                 withXml {
                     def dependenciesNode = asNode().appendNode('dependencies')
