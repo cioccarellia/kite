@@ -33,7 +33,7 @@ dependencies {
 ```xml
 <dependency>
     <groupId>com.github.cioccarellia</groupId>
-    <artifactId>kote</artifactId>
+    <artifactId>kite</artifactId>
     <version>1.1.2</version>
     <type>pom</type>
 </dependency>
