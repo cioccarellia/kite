@@ -10,9 +10,9 @@
   <a href="https://app.circleci.com/pipelines/github/cioccarellia/kite"><img src="https://circleci.com/gh/cioccarellia/kite.svg?style=svg" alt="CircleCI"></a>
   <a href="https://www.codacy.com/gh/cioccarellia/kite/dashboard"><img src="https://app.codacy.com/project/badge/Grade/91fb67a5494d4767b71c7bf99810c1c9" alt="Codacy"></a>
   <a href="https://kotlinlang.org/releases.html"><img src="https://img.shields.io/badge/kotlin-1.4.30-orange.svg" alt="Kotlin"></a>
-  <a><img src="https://img.shields.io/badge/min-14-00e676.svg" alt="Android Min Sdk"></a>
-  <a><img src="https://img.shields.io/badge/compile-30-00e676.svg" alt="Android Compile Version"></a>
-  <a href="https://github.com/cioccarellia/kite/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License"></a>
+  <a href="https://source.android.com/setup/start/build-numbers"><img src="https://img.shields.io/badge/min-14-00e676.svg" alt="Android Min Sdk"></a>
+  <a href="https://source.android.com/setup/start/build-numbers"><img src="https://img.shields.io/badge/compile-30-00e676.svg" alt="Android Compile Version"></a>
+  <a href="https://github.com/cioccarellia/kite/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License"></a>
 </p>
 
 ## TLDR
@@ -70,7 +70,7 @@ You're all set. You can now import the `Kite` object, select whichever resource 
 Beware: kite can not and **will not** save you from the mess that is dealing with Android `Context`.
 After all, kite is some cleverly placed syntactic sugar over those same android methods you are used to: kite itself holds a reference to `Context`.
 It will, however, unify and thoroughly uniform your experience with dealing with all android related resource extraction operations, which can turn to be extremely practical.
-It may also save you from typing again `ContextCompat` in your life. That's the precise reason kite was created. I'm not kidding.
+It may also save you from typing again `ContextCompat` in your life. That's the precise reason kite was created.
 
 
 ## Samples
