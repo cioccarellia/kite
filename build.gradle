@@ -17,22 +17,20 @@ apply from: rootProject.file("gradle/versions_plugin_config.gradle")
 apply plugin: 'io.codearte.nexus-staging'
 
 buildscript {
-    ext.kotlin_version = '1.4.32'
+    ext.kotlin_version = '1.5.0'
     apply from: rootProject.file("dependencies.gradle")
 
     repositories {
         google()
         mavenCentral()
-
-        // Remove as soon as humanly possible
-        jcenter()
+        gradlePluginPortal()
     }
 
     dependencies {
         classpath deps.gradle_plugins.android
         classpath deps.gradle_plugins.kotlin
         classpath deps.gradle_plugins.versions
-        classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.22.0"
+        classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.30.0"
     }
 }
 
@@ -40,9 +38,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-
-        // Remove as soon as humanly possible
-        jcenter()
+        gradlePluginPortal()
     }
 }
 
