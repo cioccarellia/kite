@@ -24,7 +24,7 @@ import com.cioccarellia.kite.fetchers.CustomKiteFetcher
 /**
  * [KitePlurals] Implementation
  * */
-public class KitePlurals : CustomKiteFetcher<@PluralsRes Int, String>() {
+public class KitePlurals : CustomKiteFetcher</* @PluralsRes */ Int, String>() {
     public operator fun get(
         @PluralsRes @IntRange(from = 1) plurals: Int,
         quantity: Int

@@ -26,7 +26,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteColors] Implementation
  * */
-public class KiteColors : StandardKiteFetcher<@ColorRes Int, @ColorInt Int>() {
+public class KiteColors : StandardKiteFetcher</* @ColorRes */ Int, /* @ColorInt */ Int>() {
     @ColorInt
     override operator fun get(
         @ColorRes @IntRange(from = 1) color: Int

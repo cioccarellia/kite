@@ -24,7 +24,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteIntegers] Implementation
  * */
-public class KiteIntegers : StandardKiteFetcher<@IntegerRes Int, Int>() {
+public class KiteIntegers : StandardKiteFetcher</* @IntegerRes */ Int, Int>() {
     override operator fun get(
         @IntegerRes @IntRange(from = 1) integer: Int
     ): Int = kiteContext.resources.getInteger(integer)

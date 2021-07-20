@@ -26,7 +26,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteAnimations] Implementation
  * */
-public class KiteAnimations : StandardKiteFetcher<@AnimRes Int, Animation>() {
+public class KiteAnimations : StandardKiteFetcher</* @AnimRes */ Int, Animation>() {
     override operator fun get(
         @AnimRes @IntRange(from = 1) animation: Int
     ): Animation = AnimationUtils.loadAnimation(kiteContext, animation)!!

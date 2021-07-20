@@ -27,7 +27,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteFonts] Implementation
  * */
-public class KiteFonts : StandardKiteFetcher<@FontRes Int, Typeface>() {
+public class KiteFonts : StandardKiteFetcher</* @FontRes */ Int, Typeface>() {
     @RequiresApi(Build.VERSION_CODES.O)
     override operator fun get(
         @FontRes @IntRange(from = 1) font: Int

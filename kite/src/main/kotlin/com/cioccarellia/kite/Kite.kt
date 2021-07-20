@@ -15,6 +15,7 @@
  */
 package com.cioccarellia.kite
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
 import android.content.res.TypedArray
@@ -24,8 +25,6 @@ import android.graphics.drawable.Drawable
 import android.util.TypedValue
 import android.view.animation.Animation
 import android.view.animation.Interpolator
-import com.cioccarellia.kite.fetchers.CustomKiteFetcher
-import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 import com.cioccarellia.kite.fetchers.compat.KiteColorStateLists
 import com.cioccarellia.kite.fetchers.compat.KiteColors
 import com.cioccarellia.kite.fetchers.compat.KiteDrawables
@@ -36,14 +35,16 @@ import com.cioccarellia.kite.fetchers.custom.KiteInterpolators
 import com.cioccarellia.kite.fetchers.resources.*
 import java.io.InputStream
 
+@SuppressLint("StaticFieldLeak")
 public object Kite {
     /**
-     * Initializes Kite and sets the current Kite [Context]
+     * Initializes Kite and sets the current Kite [Context].
+     * Beware
      *
-     * @param context The [Context] kite is initialized with
+     * @param applicationContext The [Context] kite is initialized with
      * */
-    public fun fly(context: Context) {
-        this.context = context
+    public fun fly(applicationContext: Context) {
+        this.context = applicationContext
     }
 
     /**
@@ -51,18 +52,6 @@ public object Kite {
      * */
     @PublishedApi
     internal lateinit var context: Context
-
-    /**
-     * Used to switch kite [Context].
-     *
-     * @param updatedContext    The [Context] to be set as the new kite [context]
-     * @return [Kite]           The kite instance
-     * */
-    public fun changeContext(
-        updatedContext: Context
-    ): Kite = apply {
-        context = updatedContext
-    }
 
     /**
      * Fetches [String]s from resources.

@@ -29,7 +29,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteDrawables] Implementation
  * */
-public class KiteDrawables : StandardKiteFetcher<@DrawableRes Int, Drawable>() {
+public class KiteDrawables : StandardKiteFetcher</* @DrawableRes */ Int, Drawable>() {
     override operator fun get(
         @DrawableRes @IntRange(from = 1) drawable: Int
     ): Drawable = ContextCompat.getDrawable(kiteContext, drawable)!!

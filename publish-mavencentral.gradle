@@ -50,15 +50,15 @@ publishing {
             groupId PUBLISH_GROUP_ID
             artifactId PUBLISH_ARTIFACT_ID
             version PUBLISH_VERSION
-            
+
             if (project.plugins.findPlugin("com.android.library")) {
                 artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
             } else {
                 artifact("$buildDir/libs/${project.getName()}-${version}.jar")
             }
-            
+
             artifact androidSourcesJar
-            
+
             pom {
                 name = PUBLISH_ARTIFACT_ID
                 description = PUBLISH_ARTIFACT_DESC
@@ -83,7 +83,7 @@ publishing {
                 }
                 withXml {
                     def dependenciesNode = asNode().appendNode('dependencies')
-                    
+
                     project.configurations.implementation.allDependencies.each {
                         def dependencyNode = dependenciesNode.appendNode('dependency')
                         dependencyNode.appendNode('groupId', it.group)
@@ -98,7 +98,7 @@ publishing {
         maven {
             name = "sonatype"
             url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-            
+
             credentials {
                 username ossrhUsername
                 password ossrhPassword

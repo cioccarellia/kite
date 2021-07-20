@@ -22,7 +22,6 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.cioccarellia.kite.Kite
-import com.cioccarellia.kite.fetchers.changeContext
 import com.cioccarellia.kite.fetchers.runWith
 
 class MainActivity : AppCompatActivity() {
@@ -38,10 +37,11 @@ class MainActivity : AppCompatActivity() {
             Kite.color[R.color.md_red]
         )
 
+
         // Runs inside activity context
-        val x = Kite.color.runWith(this) { color ->
+        val x = Kite.color.runWith(this) {
             buttonView.setBackgroundColor(
-                color[R.color.colorAccent]
+                it[R.color.colorAccent]
             )
         }
     }

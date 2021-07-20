@@ -26,7 +26,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteColorStateLists] Implementation
  * */
-public class KiteColorStateLists : StandardKiteFetcher<@ColorRes Int, ColorStateList>() {
+public class KiteColorStateLists : StandardKiteFetcher</* @ColorRes */ Int, ColorStateList>() {
     override operator fun get(
         @ColorRes @IntRange(from = 1) colorStateList: Int
     ): ColorStateList = ContextCompat.getColorStateList(kiteContext, colorStateList)!!

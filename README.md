@@ -9,7 +9,7 @@
   <a href="https://app.circleci.com/pipelines/github/cioccarellia/kite"><img src="https://circleci.com/gh/cioccarellia/kite.svg?style=svg" alt="CircleCI"></a>
   <a href="https://github.com/cioccarellia/kite/actions?query=workflow%3A%22Android+CI%22"><img src="https://github.com/cioccarellia/kite/workflows/Android%20CI/badge.svg" alt="Android CI" /></a>
   <a href="https://www.codacy.com/gh/cioccarellia/kite/dashboard"><img src="https://app.codacy.com/project/badge/Grade/91fb67a5494d4767b71c7bf99810c1c9" alt="Codacy"></a>
-  <a href="https://kotlinlang.org/releases.html"><img src="https://img.shields.io/badge/kotlin-1.5.0-orange.svg" alt="Kotlin"></a>
+  <a href="https://kotlinlang.org/releases.html"><img src="https://img.shields.io/badge/kotlin-1.5.21-orange.svg" alt="Kotlin"></a>
   <a href="https://source.android.com/setup/start/build-numbers"><img src="https://img.shields.io/badge/min-14-00e676.svg" alt="Android Min Sdk"></a>
   <a href="https://source.android.com/setup/start/build-numbers"><img src="https://img.shields.io/badge/compile-30-00e676.svg" alt="Android Compile Version"></a>
   <a href="https://github.com/cioccarellia/kite/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License"></a>
@@ -22,7 +22,7 @@ Fed up with typing `ContextCompat`, `resources` and `context` all over your apps
 
 ```gradle
 dependencies {
-    implementation 'com.github.cioccarellia:kite:1.2.0'
+    implementation 'com.github.cioccarellia:kite:1.2.1'
 }
 ```
 </details>
@@ -31,7 +31,7 @@ dependencies {
 
 ```gradle
 dependencies {
-    implementation("com.github.cioccarellia:kite:1.2.0")
+    implementation("com.github.cioccarellia:kite:1.2.1")
 }
 ```
 </details>
@@ -42,7 +42,7 @@ dependencies {
 <dependency>
     <groupId>com.github.cioccarellia</groupId>
     <artifactId>kite</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <type>pom</type>
 </dependency>
 ```
@@ -100,13 +100,7 @@ fab.isVisible =           resources.getBoolean(R.bool.show_fab)
 ## Context Switching
 One clear disadvantage to using kite with respect to doing things the old way is choosing which context to use.
 That's why Kite comes packed with extension functions for permanent change / temporary switch the in-use context, so that you have full control over which context is used to do what.
-- `changeContext` can be invoked on `Kite` and on any `KiteFetcher`, it is chainable and it permanently changes the context reference kite holds.
-```kotlin
-Kite.changeContext(this)
-Kite.integer.changeContext(this)[R.integer.threads]
-```
-
-- `runWith` can be invoked on any `KiteFetcher`, it is chainable and it temporarily runs the passed lambda in the desired context.
+- `runWith` can be invoked on any `KiteFetcher` object, it is chainable and it temporarily runs the passed lambda in the desired context.
 ```kotlin
 Kite.color.runWith(this) { color ->
     button.setBackground(

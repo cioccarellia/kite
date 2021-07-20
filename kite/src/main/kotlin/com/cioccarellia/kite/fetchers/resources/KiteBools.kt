@@ -24,7 +24,7 @@ import com.cioccarellia.kite.fetchers.StandardKiteFetcher
 /**
  * [KiteBools] Implementation
  * */
-public class KiteBools : StandardKiteFetcher<@BoolRes Int, Boolean>() {
+public class KiteBools : StandardKiteFetcher</* @BoolRes */ Int, Boolean>() {
     override operator fun get(
         @BoolRes @IntRange(from = 1) boolean: Int
     ): Boolean = kiteContext.resources.getBoolean(boolean)
