@@ -27,9 +27,9 @@ jobs:
       - run:
           name: "dependencyUpdates"
           command: ./gradlew dependencyUpdates
-      - run:
-          name: "Run Gradle check"
-          command: ./gradlew check
-      - run:
-          name: "Run Tests"
-          command: ./gradlew lint test
+    #  - run:
+    #      name: "Run Gradle check"
+    #      command: ./gradlew check
+    #  - run:
+    #      name: "Run Tests"
+    #      command: ./gradlew lint test
