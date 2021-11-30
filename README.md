@@ -136,7 +136,7 @@ Kite delegates resource collection to `KiteFetcher`s. Those classes contain a we
 | Raws            	| `R.raw`          	| `Kite.raw`            	| `@RawRes raw: Int`                                      	| `InputStream`       	| `Resources.openRawResource()`       	| /   	| `TypedValue`       	|
 
 ## :warning: Known Issues
-- Annotation checks over resource function parameters (functions which take as argument some annotated value, like `@ColorRes`, `@StringRes`) are not extensively performed by Android Studio, when using kotlin operator functions. I created a bug report @ google issue tracker [here](https://issuetracker.google.com/issues/173628041). Hope to see it fixed soon, by <s>2020</s> 2021
+- Annotation checks over resource function parameters (functions which take as argument some annotated value, like `@ColorRes`, `@StringRes`) are not extensively performed by Android Studio, when using kotlin operator functions. I created a bug report @ google issue tracker [here](https://issuetracker.google.com/issues/173628041). Hope to see it fixed soon, by <s>2020</s> <s>2021</s> 2022
 
 ## Kite Puns
 - A kite usually comes with different *colors*
